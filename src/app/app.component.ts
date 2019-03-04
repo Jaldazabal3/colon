@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'colon';
+  title = 'Programa de Detecció Precoç de Càncer de Colon i Recte | Programa de Prevenció i Control del Càncer';
 }
