@@ -2,7 +2,16 @@
   <a mat-tab-link routerLink='/informacio'>Informació</a>
   <a mat-tab-link routerLink='/consultes'>Consultes</a>
 </nav> -->
-<div class="w3-bar w3-black">
+<!-- <div class="w3-bar w3-black">
   <button class="w3-bar-item w3-button" routerLink='/informacio'>Informació</button>
   <button class="w3-bar-item w3-button" routerLink='/consultes'>Consultes</button>
-</div>
+</div> -->
+<nav mat-tab-nav-bar mat-stretch-tabs class="top-menu">
+  <a mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.path"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>

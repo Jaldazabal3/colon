@@ -9,6 +9,17 @@ export class TopMenuComponent implements OnInit {
 
   constructor() { }
 
+  public navLinks = [
+    {
+      label: 'Informació',
+      path: '/informacio'
+    },
+    {
+      label: 'Consultes',
+      path: '/consultes'
+    },
+  ];
+
   ngOnInit() {
   }
 

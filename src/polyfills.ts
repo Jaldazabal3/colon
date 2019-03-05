@@ -58,6 +58,8 @@
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
 
+
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+import 'w3-css/w3.css';
