@@ -44,9 +44,5 @@ export class TopMenuComponent implements OnInit {
       } else {
         this.sticky=false;
       }
-    }
-
-  
-  
-  
+    } 
 }
