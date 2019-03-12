@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from "@angular/forms";
+
 
 @Component({
   selector: 'app-consultes',
@@ -12,14 +12,5 @@ export class ConsultesComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  consultesControl = new FormGroup({
-    age: new FormControl(''),
-    town: new FormControl(''),
-    cip: new FormControl(''),
-    nccr: new FormControl(''),
-    name: new FormControl(''),
-    surname: new FormControl('')
-  });
 
 }

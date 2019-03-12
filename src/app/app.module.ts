@@ -12,13 +12,15 @@ import { InformacioComponent } from './informacio/informacio.component';
 import { ConsultesComponent } from './consultes/consultes.component';
 
 import { AppRoutingModule } from "./app-routing.module";
+import { IdentificativeDataComponent } from './identificative-data/identificative-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopMenuComponent,
     InformacioComponent,
-    ConsultesComponent
+    ConsultesComponent,
+    IdentificativeDataComponent
   ],
   imports: [
     BrowserModule,
