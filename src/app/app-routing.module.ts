@@ -5,9 +5,8 @@ import { InformacioComponent } from "./informacio/informacio.component";
 import { ConsultesComponent } from "./consultes/consultes.component";
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/informacio', pathMatch: 'full' },
-  { path: '', redirectTo: '/informacio', pathMatch: 'full' },
-  { path: 'informacio', component: InformacioComponent },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'main', component: InformacioComponent },
   { path: 'consultes', component: ConsultesComponent },
 ];
 

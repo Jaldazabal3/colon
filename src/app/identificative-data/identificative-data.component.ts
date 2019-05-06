@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from "@angular/forms";
+import { Validators, FormBuilder } from "@angular/forms";
 
 @Component({
   selector: 'app-identificative-data',
@@ -8,18 +8,19 @@ import { FormGroup, FormControl } from "@angular/forms";
 })
 export class IdentificativeDataComponent implements OnInit {
 
-  constructor() { }
+  
 
   ngOnInit() {
   }
 
-  idDataControl = new FormGroup({
-    age: new FormControl(''),
-    town: new FormControl(''),
-    cip: new FormControl(''),
-    nccr: new FormControl(''),
-    name: new FormControl(''),
-    surname: new FormControl('')
+  idDataControl = this.formBuilder.group({
+    town: ['',Validators.required],
+    cip: ['', Validators.required],
+    nccr: ['', Validators.required],
+    name: ['',Validators.required],
+    surname: ['',Validators.required]
   });
+
+  constructor(private formBuilder: FormBuilder) { }
 
 }

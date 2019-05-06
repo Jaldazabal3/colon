@@ -1,11 +1,5 @@
-<form [formGroup]="idDataControl">
+<form [formGroup]="idDataControl" (ngSubmit)="nextStep()">
   <div class="w3-row-padding">
-    <div class="w3-half">
-      <label>
-        Edat:
-      </label>
-      <input class="w3-input w3-border" type="number" formControlName="age"/>
-    </div>
     <div class="w3-half">
       <label>
         Municipi:
@@ -40,5 +34,20 @@
       </label>
       <input class="w3-input w3-border" type="text" formControlName="surname"/>
     </div>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+      <div class="w3-half">
+        <!-- <input class="w3-button w3-round w3-border w3-border-red w3-margin-right" type="button" value="Previous"/> -->
+        <button class="w3-button w3-round w3-border w3-border-red w3-margin-right" disabled>
+          <i class="fas fa-arrow-alt-circle-left"></i> Enrere
+        </button>
+        <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!idDataControl.valid">
+          Següent <i class="fas fa-arrow-alt-circle-right"></i>
+        </button>
+        <!-- <input class="w3-button w3-round w3-border w3-border-green" type="submit" value="Next"/> -->
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <p *ngIf="!idDataControl.valid" class="helper-text w3-margin-left">Tots els camps són obligatoris</p>
   </div>
 </form>

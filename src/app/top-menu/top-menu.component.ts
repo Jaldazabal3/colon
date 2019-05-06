@@ -23,7 +23,7 @@ export class TopMenuComponent implements OnInit {
   public navLinks = [
     {
       label: 'Informació',
-      path: '/informacio'
+      path: '/main'
     },
     {
       label: 'Consultes',
