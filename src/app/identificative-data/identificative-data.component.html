@@ -1,4 +1,4 @@
-<form [formGroup]="idDataControl" (ngSubmit)="nextStep()">
+<form [formGroup]="idDataControl" (ngSubmit)="submitIdData()">
   <div class="w3-row-padding">
     <div class="w3-half">
       <label>
@@ -37,14 +37,12 @@
   </div>
   <div class="w3-row-padding w3-margin-top">
       <div class="w3-half">
-        <!-- <input class="w3-button w3-round w3-border w3-border-red w3-margin-right" type="button" value="Previous"/> -->
         <button class="w3-button w3-round w3-border w3-border-red w3-margin-right" disabled>
           <i class="fas fa-arrow-alt-circle-left"></i> Enrere
         </button>
         <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!idDataControl.valid">
           Següent <i class="fas fa-arrow-alt-circle-right"></i>
         </button>
-        <!-- <input class="w3-button w3-round w3-border w3-border-green" type="submit" value="Next"/> -->
     </div>
   </div>
   <div class="w3-row-padding">

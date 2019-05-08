@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IdentificativeDataComponent } from '../identificative-data/identificative-data.component';
+import { MotivoComponent } from '../motivo/motivo.component';
 
 
 @Component({
@@ -8,7 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultesComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(IdentificativeDataComponent) formIdentificationData: IdentificativeDataComponent;
+  @ViewChild(MotivoComponent) formMotivo: MotivoComponent;
+
+  formStep: number;
+
+  
+
+  constructor() { 
+    this.formStep=1;
+  }
+
+  goToStep2() {
+    this.formStep=2;
+  }
+
+  goToStep1(){
+    this.formStep=1;
+  }
 
   ngOnInit() {
   }

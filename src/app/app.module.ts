@@ -13,6 +13,7 @@ import { ConsultesComponent } from './consultes/consultes.component';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { IdentificativeDataComponent } from './identificative-data/identificative-data.component';
+import { MotivoComponent } from './motivo/motivo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { IdentificativeDataComponent } from './identificative-data/identificativ
     TopMenuComponent,
     InformacioComponent,
     ConsultesComponent,
-    IdentificativeDataComponent
+    IdentificativeDataComponent,
+    MotivoComponent
   ],
   imports: [
     BrowserModule,

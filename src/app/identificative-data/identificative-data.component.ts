@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Validators, FormBuilder } from "@angular/forms";
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-identificative-data',
@@ -8,7 +9,7 @@ import { Validators, FormBuilder } from "@angular/forms";
 })
 export class IdentificativeDataComponent implements OnInit {
 
-  
+  @Output() submittedIdData = new EventEmitter();
 
   ngOnInit() {
   }
@@ -22,5 +23,9 @@ export class IdentificativeDataComponent implements OnInit {
   });
 
   constructor(private formBuilder: FormBuilder) { }
+
+  private submitIdData() {
+    this.submittedIdData.emit();
+  }
 
 }
