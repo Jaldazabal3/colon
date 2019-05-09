@@ -4,7 +4,35 @@
   </div>
 
   <div [hidden]="formStep!=2">
-    <app-motivo (submittedMotivo)="goToStepMotivo()" (previousClick)="goToStep1()"></app-motivo>
+    <app-motivo (submittedMotivo)="goToStepMotivo()" (gonePrevious)="goToStep1()"></app-motivo>
+  </div>
+
+  <div [hidden]="formStep!=3">
+    <app-canvi-domicili></app-canvi-domicili>
+  </div>
+
+  <div [hidden]="formStep!=4">
+    <app-carta-perdida></app-carta-perdida>
+  </div>
+
+  <div [hidden]="formStep!=5">
+    <app-malaltia-inflamatoria-intestinal></app-malaltia-inflamatoria-intestinal>
+  </div>
+
+  <div [hidden]="formStep!=6">
+    <app-antecedents-personals></app-antecedents-personals>
+  </div>
+
+  <div [hidden]="formStep!=7">
+    <app-antecedents-familiars></app-antecedents-familiars>
+  </div>
+
+  <div [hidden]="formStep!=8">
+    <app-colon-previa></app-colon-previa>
+  </div>
+
+  <div [hidden]="formStep!=9">
+    <app-canvi-domicili></app-canvi-domicili>
   </div>
 
 
