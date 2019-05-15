@@ -21,6 +21,7 @@ import { AntecedentsPersonalsComponent } from './antecedents-personals/anteceden
 import { AntecedentsFamiliarsComponent } from './antecedents-familiars/antecedents-familiars.component';
 import { ColonPreviaComponent } from './colon-previa/colon-previa.component';
 import { OtrosComponent } from './otros/otros.component';
+import { MunicipiComponent } from './municipi/municipi.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { OtrosComponent } from './otros/otros.component';
     AntecedentsPersonalsComponent,
     AntecedentsFamiliarsComponent,
     ColonPreviaComponent,
-    OtrosComponent
+    OtrosComponent,
+    MunicipiComponent
   ],
   imports: [
     BrowserModule,

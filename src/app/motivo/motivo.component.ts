@@ -16,8 +16,8 @@ export class MotivoComponent implements OnInit {
   motivos = MOTIVOS;
 
   motivoControl = this.formBuilder.group({
-    motivos: ['',Validators.required]
-  })
+    motivos: ['', Validators.required]
+  });
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -25,11 +25,11 @@ export class MotivoComponent implements OnInit {
   }
 
   private goPreviousStep(){
-    this.gonePrevious.emit()
+    this.gonePrevious.emit();
   }
 
   private submitMotivo(){
-    console.log("Motivo: "+ this.motivoControl.get("motivos"))
+    console.log('Motivo: ' + this.motivoControl.get('motivos'));
     // this.submittedMotivo.emit()
   }
 }

@@ -8,4 +8,4 @@ export const MOTIVOS: Motivo[] = [
     { id: 5, text: 'Antecedents familiars de càncer colorectal' },
     { id: 6, text: 'Colonoscòpia prèvia' },
     { id: 7, text: 'Altres' }
-]
+];

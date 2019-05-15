@@ -1,6 +1,9 @@
 <div class="w3-container w3-margin-top">
+  <div [hidden]="formStep!=0">
+    <app-municipi (submittedMunicipi)="goToStep1()" (previousClick)="console.log('what?');" ></app-municipi>
+  </div>
   <div [hidden]="formStep!=1">
-    <app-identificative-data (submittedIdData)="goToStep2()" (previousClick)="console.log('what?');" ></app-identificative-data>
+    <app-identificative-data (submittedIdData)="goToStep2()" (previousClick)="goToStep0()" ></app-identificative-data>
   </div>
 
   <div [hidden]="formStep!=2">
