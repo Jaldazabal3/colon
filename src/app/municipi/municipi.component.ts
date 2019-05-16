@@ -26,7 +26,7 @@ export class MunicipiComponent implements OnInit {
   }
 
   private buttonClicked(){
-    console.log('Municipi: ' + this.municipiControl.get('municipi'));
+    console.log('Municipi: ' + this.municipiControl.value);
   }
 
 }

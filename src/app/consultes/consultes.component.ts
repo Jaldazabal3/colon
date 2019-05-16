@@ -32,6 +32,8 @@ export class ConsultesComponent implements OnInit {
 
   constructor() {
     this.formStep = 0;
+    // Testing if is printing motivo
+    // this.formStep = 1;
   }
 
   goToStep2() {
