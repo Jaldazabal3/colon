@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
-import { ReactiveFormsModule } from "@angular/forms";
+import { MatFormField } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -11,7 +13,7 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { InformacioComponent } from './informacio/informacio.component';
 import { ConsultesComponent } from './consultes/consultes.component';
 
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule } from './app-routing.module';
 import { IdentificativeDataComponent } from './identificative-data/identificative-data.component';
 import { MotivoComponent } from './motivo/motivo.component';
 import { CanviDomiciliComponent } from './canvi-domicili/canvi-domicili.component';
@@ -46,7 +48,9 @@ import { MunicipiComponent } from './municipi/municipi.component';
     MatTabsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatStepperModule
+    MatStepperModule,
+    NgbModule,
+    MatFormField
   ],
   providers: [],
   bootstrap: [AppComponent]
