@@ -1,13 +1,8 @@
 <form [formGroup]="municipiControl" (ngSubmit)="submitMunicipi()">
-  <div class="w3-row-padding w3-margin-top">
-    <mat-form-field>
-      <input
-        type="text"
-
-      />
-    </mat-form-field>
+  <div class="form-group">
+    <input type="text" class="form-control" [ngbTypeahead]="filterMunicipi" formControlName="municipi"/>
   </div>
-  <button type="button" class="w3-button w3-round w3-border" (click)="buttonClicked()">Try Me!</button>
+  <button type="button" class="btn btn-primary" (click)="buttonClicked()">Try Me!</button>
   <div class="w3-row-padding w3-margin-top">
     <p class="alert-danger">
       {{municipiControl.get(['municipi']).value}}

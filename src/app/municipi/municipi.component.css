@@ -1,3 +1,6 @@
 label{
   vertical-align: middle !important;
 }
+.full-width{
+  width: 100%;
+}
