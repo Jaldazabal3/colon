@@ -1,11 +1,15 @@
 <div class="w3-container w3-margin-top">
+  <!--1 - MUNICPI -->
   <div [hidden]="formStep!=0">
-    <app-municipi (submittedMunicipi)="goToStep1()" (previousClick)="console.log('what?');" ></app-municipi>
-  </div>
-  <div [hidden]="formStep!=1">
-    <app-identificative-data (submittedIdData)="goToStep2()" (previousClick)="goToStep0()" ></app-identificative-data>
+    <app-municipi (submittedMunicipi)="goToStep1()"></app-municipi>
   </div>
 
+  <!--2 - DADES IDENTIFICATIVES-->
+  <div [hidden]="formStep!=1">
+    <app-identificative-data (submittedIdData)="goToStep2()" (gonePrevious)="goToStep0()" ></app-identificative-data>
+  </div>
+
+  <!--3 - MOTIU-->
   <div [hidden]="formStep!=2">
     <app-motivo (submittedMotivo)="goToStepMotivo()" (gonePrevious)="goToStep1()"></app-motivo>
   </div>

@@ -31,9 +31,9 @@ export class ConsultesComponent implements OnInit {
 
 
   constructor() {
-    this.formStep = 0;
+    // this.formStep = 0;
     // Testing if is printing motivo
-    // this.formStep = 1;
+    this.formStep = 1;
   }
 
   goToStep2() {
@@ -42,6 +42,10 @@ export class ConsultesComponent implements OnInit {
 
   goToStep1(){
     this.formStep = 1;
+  }
+
+  goToStep0(){
+    this.formStep = 0;
   }
 
   ngOnInit() {

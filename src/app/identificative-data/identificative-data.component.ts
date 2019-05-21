@@ -12,9 +12,12 @@ export class IdentificativeDataComponent implements OnInit {
     cip: ['', Validators.required],
     nccr: ['', Validators.required],
     name: ['', Validators.required],
-    surname: ['', Validators.required]
+    surname: ['', Validators.required],
+    email: ['', Validators.email],
+    phone: ['', Validators.pattern('\d*9')]
   });
 
+  @Output() gonePrevious = new EventEmitter();
   @Output() submittedIdData = new EventEmitter();
 
   ngOnInit() {
@@ -24,5 +27,9 @@ export class IdentificativeDataComponent implements OnInit {
 
   private submitIdData() {
     this.submittedIdData.emit();
+  }
+
+  private goPreviousStep() {
+    this.gonePrevious.emit();
   }
 }

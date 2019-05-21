@@ -24,11 +24,11 @@ export class MotivoComponent implements OnInit {
   ngOnInit() {
   }
 
-  private goPreviousStep(){
+  private goPreviousStep() {
     this.gonePrevious.emit();
   }
 
-  private submitMotivo(){
+  private submitMotivo() {
     console.log('Motivo: ' + this.motivoControl.get('motivos'));
     // this.submittedMotivo.emit()
   }

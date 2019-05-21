@@ -1,11 +1,25 @@
 <form [formGroup]="municipiControl" (ngSubmit)="submitMunicipi()">
   <div class="form-group">
-    <input type="text" class="form-control" [ngbTypeahead]="filterMunicipi" formControlName="municipi"/>
+    <ng-select
+      [selectOnTab]="true"
+      [items]="municipis"
+      placeholder="Escull el teu municipi"
+      formControlName="municipi"
+    ></ng-select>
+  <small id="municipi-helper" class="form-text text-muted">
+    Comenci a escriure per a sel·leccionar el seu municipi
+  </small>
   </div>
-  <button type="button" class="btn btn-primary" (click)="buttonClicked()">Try Me!</button>
-  <div class="w3-row-padding w3-margin-top">
-    <p class="alert-danger">
-      {{municipiControl.get(['municipi']).value}}
-    </p>
-  </div>
+  <button
+    type="submit"
+    class="w3-button w3-round w3-border w3-border w3-border-green"
+    [disabled]="!municipiControl.valid"
+  >
+    Següent <i class="fas fa-arrow-alt-circle-right"></i>
+  </button>
 </form>
+<div class="w3-margin-top">
+  <p>
+    Si el seu municipi no es troba en aquesta relació, no pertany a l'oficina tècnica de l'ICO. Truqui al 061 per a més informació.
+  </p>
+</div>

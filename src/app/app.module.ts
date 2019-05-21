@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 import { AppComponent } from './app.component';
@@ -52,7 +53,8 @@ import { MunicipiComponent } from './municipi/municipi.component';
     MatStepperModule,
     NgbModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
