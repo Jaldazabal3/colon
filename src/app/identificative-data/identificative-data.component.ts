@@ -14,8 +14,10 @@ export class IdentificativeDataComponent implements OnInit {
     name: ['', Validators.required],
     surname: ['', Validators.required],
     email: ['', Validators.email],
-    phone: ['', Validators.pattern('\d*9')]
+    phone: ['', Validators.pattern('^\\d{9}$')]
   });
+
+  cipImageLink = 'assets/image/tarjeta_sanitaria.jpg';
 
   @Output() gonePrevious = new EventEmitter();
   @Output() submittedIdData = new EventEmitter();

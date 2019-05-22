@@ -4,41 +4,53 @@
       <label>
         Nom:
       </label>
-      <input class="w3-input w3-border" type="text" formControlName="name"/>
+      <input class="form-control" type="text" formControlName="name"/>
     </div>
     <div class="w3-half">
       <label>
         Cognoms:
       </label>
-      <input class="w3-input w3-border" type="text" formControlName="surname"/>
+      <input class="form-control" type="text" formControlName="surname"/>
     </div>
   </div>
   <div class="w3-row-padding w3-margin-top">
     <div class="w3-half">
+      <ng-template #cipContent><img src="{{cipImageLink}}"/></ng-template>
       <label>
         CIP:
+        <a role="button" [ngbPopover]="cipContent" triggers="mouseenter:mouseleave" placement="right">
+          <i class="text-muted far fa-question-circle"></i>
+        </a>
       </label>
-      <input class="w3-input w3-border" type="text" formControlName="cip"/>
+      <input class="form-control" type="text" formControlName="cip"/>
     </div>
     <div class="w3-half">
       <label>
         NCCR:
+        <a role="button" ngbPopover="" triggers="mouseenter:mouseleave" popoverTitle="NCCR:" placement="right">
+          <i class="text-muted far fa-question-circle"></i>
+        </a>
       </label>
-      <input class="w3-input w3-border" type="text" formControlName="nccr"/>
+      <input class="form-control" type="text" formControlName="nccr"/>
     </div>
+    <small class="w3-margin-left form-text text-muted">
+      Només és obligatori un d'aquests dos camps. Pot emplenar o bé el CIP o bé el NCCR o bé ambdós
+    </small>
   </div>
   <div class="w3-row-padding w3-margin-top">
     <div class="w3-half">
       <label for="email">
-        Email
+        Email (opcional):
       </label>
-      <input type="text" id="email" formControlName="email"/>
+      <input class="form-control" type="text" id="email" formControlName="email"/>
+      <small *ngIf="!idDataControl.get('email').valid" class="helper-text text-danger">Email no vàlid</small>
     </div>
     <div class="w3-half">
       <label for="phone">
-        Telèfon
+        Telèfon (opcional):
       </label>
-      <input type="text" id="phone" formControlName="phone"/>
+      <input class="form-control" type="text" id="phone" formControlName="phone"/>
+      <small *ngIf="!idDataControl.get('phone').valid" class="helper-text text-danger">Telèfon no vàlid</small>
     </div>
   </div>
   <div class="w3-row-padding w3-margin-top">
@@ -51,7 +63,9 @@
         </button>
     </div>
   </div>
-  <div class="w3-row-padding">
-    <p *ngIf="!idDataControl.valid" class="helper-text w3-margin-left">Tots els camps són obligatoris</p>
-  </div>
 </form>
+<div class="w3-margin-top w3-margin-left">
+  <p>
+    És important tenir les dades actualitzades a l'RCA (Registre Central d'Assegurats), ho pot comprovar truncant al 061.
+  </p>
+</div>
