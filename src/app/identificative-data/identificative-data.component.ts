@@ -8,6 +8,7 @@ import { Validators, FormBuilder } from '@angular/forms';
 })
 export class IdentificativeDataComponent implements OnInit {
 
+  // TODO: Only nccr or cip variable required, not both
   idDataControl = this.formBuilder.group({
     cip: ['', Validators.required],
     nccr: ['', Validators.required],
