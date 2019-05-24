@@ -26,9 +26,10 @@
     </div>
     <div class="w3-half">
       <!--TODO: NCCR imatge popover -->
+      <ng-template #nccrContent><b>{{nccrImageLink}}</b></ng-template>
       <label>
         NCCR:
-        <a role="button" ngbPopover="" triggers="mouseenter:mouseleave" popoverTitle="NCCR:" placement="right">
+        <a role="button" [ngbPopover]="nccrContent" triggers="mouseenter:mouseleave" placement="right">
           <i class="text-muted far fa-question-circle"></i>
         </a>
       </label>

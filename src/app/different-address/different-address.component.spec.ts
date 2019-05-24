@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OtrosComponent } from './otros.component';
+import { DifferentAddressComponent } from './different-address.component';
 
-describe('OtrosComponent', () => {
-  let component: OtrosComponent;
-  let fixture: ComponentFixture<OtrosComponent>;
+describe('DifferentAddressComponent', () => {
+  let component: DifferentAddressComponent;
+  let fixture: ComponentFixture<DifferentAddressComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OtrosComponent ]
+      declarations: [ DifferentAddressComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OtrosComponent);
+    fixture = TestBed.createComponent(DifferentAddressComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

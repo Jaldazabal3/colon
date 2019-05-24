@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MOTIVOS } from '../list-motivos';
 import { Validators, FormBuilder } from '@angular/forms';
-import { Motivo } from '../motivo';
+
 
 @Component({
   selector: 'app-motivo',
@@ -29,7 +29,7 @@ export class MotivoComponent implements OnInit {
   }
 
   private submitMotivo() {
-    console.log('Motivo: ' + this.motivoControl.get('motivos'));
-    // this.submittedMotivo.emit()
+    // console.log('Motivo: ' + this.motivoControl.get('motivos').value.text);
+    this.submittedMotivo.emit()
   }
 }
