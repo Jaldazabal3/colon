@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {Validators, FormBuilder} from '@angular/forms';
+import { Validators, FormBuilder} from '@angular/forms';
 
 
 @Component({
@@ -9,7 +9,6 @@ import {Validators, FormBuilder} from '@angular/forms';
 })
 export class IdentificativeDataComponent implements OnInit {
 
-  // TODO: Only nccr or cip variable required, not both
   idDataControl = this.formBuilder.group({
     cip: [''],
     nccr: [''],
@@ -23,7 +22,7 @@ export class IdentificativeDataComponent implements OnInit {
     });
 
   cipImageLink = 'assets/image/tarjeta_sanitaria.jpg';
-  nccrImageLink = 'For now we have a dummy text. Lorem ipsum dolor sit amet.';
+  nccrImageLink = 'assets/image/carta_header.jpg';
 
   @Output() gonePrevious = new EventEmitter();
   @Output() submittedIdData = new EventEmitter();
@@ -41,6 +40,11 @@ export class IdentificativeDataComponent implements OnInit {
     this.gonePrevious.emit();
   }
 
+  /**
+   * Validates whether NCCR or CIP are filled, id est, whether both fields are empty.
+   * @param formGroup Form to be validated
+   * @return true if both fields are empty, false otherwise. So if this function is false, it means that the user can continue.
+   */
   private customValidation(formGroup): any {
     /* tslint:disable:no-string-literal */
     const nccrField = formGroup.controls['nccr'].value;

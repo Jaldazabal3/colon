@@ -30,6 +30,6 @@ export class MotivoComponent implements OnInit {
 
   private submitMotivo() {
     // console.log('Motivo: ' + this.motivoControl.get('motivos').value.text);
-    this.submittedMotivo.emit()
+    this.submittedMotivo.emit();
   }
 }

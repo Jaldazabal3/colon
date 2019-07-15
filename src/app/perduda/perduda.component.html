@@ -1,0 +1,43 @@
+<form [formGroup]="perdudaControl" (ngSubmit)="submit">
+    <div class="w3-row-padding w3-margin-top">
+        <div class="form-group">
+            <div class="row">
+                <legend class="col-form-label font-weight-bold">
+                    En breu rebrà un duplicat, com el desitja rebre?
+                </legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input
+                                class="form-check-input"
+                                type="radio"
+                                formControlName="mediaRecieved"
+                                id="correuPostal"
+                                value="correuPostal"
+                        />
+                        <label for="correuPostal">
+                            Correu postal
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                                class="form-check-input"
+                                type="radio"
+                                formControlName="mediaRecieved"
+                                id="correuEmail"
+                                value="email"
+                        />
+                        <label for="correuEmail">
+                            Correu electrònic
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row" *ngIf="perdudaControl.get('mediaRecieved').value=='email'">
+            <label for="emailText" class="col-sm-3 col-form-label">
+                Escrigui el correu electrònic:
+            </label>
+            <input type="text" formControlName="email" id="emailText" class="form-control col-sm-9"/>
+        </div>
+    </div>
+</form>

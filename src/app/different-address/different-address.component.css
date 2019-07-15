@@ -1,0 +1,9 @@
+.contacte > ul{
+    list-style-type: none;
+}
+.sep-contacte{
+    border-color: black;
+}
+h4{
+    font-weight: bold;
+}

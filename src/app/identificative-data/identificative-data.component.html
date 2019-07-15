@@ -18,18 +18,17 @@
       <ng-template #cipContent><img src="{{cipImageLink}}"/></ng-template>
       <label>
         CIP:
-        <a role="button" [ngbPopover]="cipContent" triggers="mouseenter:mouseleave" placement="right">
+        <a role="button" [ngbPopover]="cipContent" triggers="mouseenter:mouseleave" placement="bottom">
           <i class="text-muted far fa-question-circle"></i>
         </a>
       </label>
       <input class="form-control" type="text" formControlName="cip"/>
     </div>
     <div class="w3-half">
-      <!--TODO: NCCR imatge popover -->
-      <ng-template #nccrContent><b>{{nccrImageLink}}</b></ng-template>
+      <ng-template #nccrContent><img src="{{nccrImageLink}}" height="260" width="679"/></ng-template>
       <label>
         NCCR:
-        <a role="button" [ngbPopover]="nccrContent" triggers="mouseenter:mouseleave" placement="right">
+        <a role="button" [ngbPopover]="nccrContent" popoverClass="nccr-popover" triggers="mouseenter:mouseleave" placement="bottom">
           <i class="text-muted far fa-question-circle"></i>
         </a>
       </label>
@@ -67,7 +66,7 @@
   </div>
 </form>
 <div class="w3-margin-top w3-margin-left">
-  <p>
+  <p id="metaInfo">
     És important tenir les dades actualitzades a l'RCA (Registre Central d'Assegurats), ho pot comprovar truncant al 061.
   </p>
 </div>

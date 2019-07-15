@@ -20,6 +20,7 @@ import { IdentificativeDataComponent } from './identificative-data/identificativ
 import { MotivoComponent } from './motivo/motivo.component';
 import { DifferentAddressComponent } from './different-address/different-address.component';
 import {MunicipiComponent} from './municipi/municipi.component';
+import { PerdudaComponent } from './perduda/perduda.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MunicipiComponent} from './municipi/municipi.component';
     IdentificativeDataComponent,
     MotivoComponent,
     MunicipiComponent,
-    DifferentAddressComponent
+    DifferentAddressComponent,
+    PerdudaComponent
   ],
   imports: [
     BrowserModule,

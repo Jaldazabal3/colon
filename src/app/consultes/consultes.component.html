@@ -1,27 +1,36 @@
 <div class="w3-container w3-margin-top">
-  <!--1 - MUNICPI -->
+  <!--0 - MUNICPI -->
   <div [hidden]="formStep!=0">
     <app-municipi (submittedMunicipi)="goToStep1()"></app-municipi>
   </div>
 
-  <!--2 - DADES IDENTIFICATIVES-->
+  <!--1 - DADES IDENTIFICATIVES-->
   <div [hidden]="formStep!=1">
     <app-identificative-data (submittedIdData)="goToStep2()" (gonePrevious)="goToStep0()" ></app-identificative-data>
   </div>
 
-  <!--3 - MOTIU-->
+  <!--2 - MOTIU-->
   <div [hidden]="formStep!=2">
     <app-motivo (submittedMotivo)="goToStepMotivo()" (gonePrevious)="goToStep1()"></app-motivo>
   </div>
 
+  <!--3 - CARTA REBUDA A UNA ALTRA ADREÇA-->
   <div [hidden]="formStep!=3">
-    <app-different-address ></app-different-address>
+    <app-different-address></app-different-address>
+  </div>
+
+  <!--4 - CARTA NO REBUDA-->
+  <!--TODO: Carta no rebuda-->
+
+  <!--5 - CARTA PERDUDA -->
+  <div [hidden]="formStep!=5">
+    <app-perduda></app-perduda>
   </div>
 
 
   <div class="w3-margin-top w3-margin-left">
-    <button type="button" class="btn btn-primary" (click)="logData()">
-      Try Me
-    </button>
+  <!--  <button type="button" class="btn btn-primary" (click)="logData()">
+      Try Me!
+    </button>-->
   </div>
 </div>

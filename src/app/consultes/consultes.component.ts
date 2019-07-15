@@ -30,7 +30,7 @@ export class ConsultesComponent implements OnInit {
   formStep: number;
 
   constructor() {
-    this.formStep = 0;
+    this.formStep = 5;
   }
 
   goToStep2() {
