@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IdentificativeDataComponent } from '../identificative-data/identificative-data.component';
 import { MotivoComponent } from '../motivo/motivo.component';
-import {MunicipiComponent} from '../municipi/municipi.component';
+import { MunicipiComponent } from '../municipi/municipi.component';
+import { PerdudaComponent } from '../perduda/perduda.component';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class ConsultesComponent implements OnInit {
   @ViewChild(MunicipiComponent) formMunicipi: MunicipiComponent;
   @ViewChild(IdentificativeDataComponent) formIdentificationData: IdentificativeDataComponent;
   @ViewChild(MotivoComponent) formMotivo: MotivoComponent;
+  @ViewChild(PerdudaComponent) formPerduda: PerdudaComponent;
 
 
   /* Form steps will be:

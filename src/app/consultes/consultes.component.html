@@ -24,7 +24,7 @@
 
   <!--5 - CARTA PERDUDA -->
   <div [hidden]="formStep!=5">
-    <app-perduda></app-perduda>
+    <app-perduda (gonePrevious)="goToStep2()"></app-perduda>
   </div>
 
 

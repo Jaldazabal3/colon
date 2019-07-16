@@ -21,6 +21,7 @@ import { MotivoComponent } from './motivo/motivo.component';
 import { DifferentAddressComponent } from './different-address/different-address.component';
 import {MunicipiComponent} from './municipi/municipi.component';
 import { PerdudaComponent } from './perduda/perduda.component';
+import { NoRebudaComponent } from './no-rebuda/no-rebuda.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PerdudaComponent } from './perduda/perduda.component';
     MotivoComponent,
     MunicipiComponent,
     DifferentAddressComponent,
-    PerdudaComponent
+    PerdudaComponent,
+    NoRebudaComponent
   ],
   imports: [
     BrowserModule,

@@ -43,7 +43,8 @@ export class IdentificativeDataComponent implements OnInit {
   /**
    * Validates whether NCCR or CIP are filled, id est, whether both fields are empty.
    * @param formGroup Form to be validated
-   * @return true if both fields are empty, false otherwise. So if this function is false, it means that the user can continue.
+   * @return object with true boolean attribute if both fields are empty, null otherwise.
+   * So if this function is null, it means that the user can continue.
    */
   private customValidation(formGroup): any {
     /* tslint:disable:no-string-literal */

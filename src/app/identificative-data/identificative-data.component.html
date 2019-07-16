@@ -1,72 +1,72 @@
 <form [formGroup]="idDataControl" (ngSubmit)="submitIdData()">
-  <div class="w3-row-padding w3-margin-top">
-    <div class="w3-half">
-      <label>
-        Nom:
-      </label>
-      <input class="form-control" type="text" formControlName="name"/>
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-half">
+            <label>
+                Nom:
+            </label>
+            <input class="form-control" type="text" formControlName="name"/>
+        </div>
+        <div class="w3-half">
+            <label>
+                Cognoms:
+            </label>
+            <input class="form-control" type="text" formControlName="surname"/>
+        </div>
     </div>
-    <div class="w3-half">
-      <label>
-        Cognoms:
-      </label>
-      <input class="form-control" type="text" formControlName="surname"/>
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-half">
+            <ng-template #cipContent><img src="{{cipImageLink}}"/></ng-template>
+            <label>
+                CIP:
+                <a role="button" [ngbPopover]="cipContent" triggers="mouseenter:mouseleave" placement="bottom">
+                    <i class="text-muted far fa-question-circle"></i>
+                </a>
+            </label>
+            <input class="form-control" type="text" formControlName="cip"/>
+        </div>
+        <div class="w3-half">
+            <ng-template #nccrContent><img src="{{nccrImageLink}}" height="260" width="679"/></ng-template>
+            <label>
+                NCCR:
+                <a role="button" [ngbPopover]="nccrContent" popoverClass="nccr-popover" triggers="mouseenter:mouseleave" placement="bottom">
+                    <i class="text-muted far fa-question-circle"></i>
+                </a>
+            </label>
+            <input class="form-control" type="text" formControlName="nccr"/>
+        </div>
+        <small class="w3-margin-left form-text text-muted">
+            Només és obligatori un d'aquests dos camps. Pot emplenar o bé el CIP o bé el NCCR o bé ambdós
+        </small>
     </div>
-  </div>
-  <div class="w3-row-padding w3-margin-top">
-    <div class="w3-half">
-      <ng-template #cipContent><img src="{{cipImageLink}}"/></ng-template>
-      <label>
-        CIP:
-        <a role="button" [ngbPopover]="cipContent" triggers="mouseenter:mouseleave" placement="bottom">
-          <i class="text-muted far fa-question-circle"></i>
-        </a>
-      </label>
-      <input class="form-control" type="text" formControlName="cip"/>
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-half">
+            <label for="email">
+                Email (opcional):
+            </label>
+            <input class="form-control" type="text" id="email" formControlName="email"/>
+            <small *ngIf="!idDataControl.get('email').valid" class="helper-text text-danger">Email no vàlid</small>
+        </div>
+        <div class="w3-half">
+            <label for="phone">
+                Telèfon (opcional):
+            </label>
+            <input class="form-control" type="text" id="phone" formControlName="phone"/>
+            <small *ngIf="!idDataControl.get('phone').valid" class="helper-text text-danger">Telèfon no vàlid</small>
+        </div>
     </div>
-    <div class="w3-half">
-      <ng-template #nccrContent><img src="{{nccrImageLink}}" height="260" width="679"/></ng-template>
-      <label>
-        NCCR:
-        <a role="button" [ngbPopover]="nccrContent" popoverClass="nccr-popover" triggers="mouseenter:mouseleave" placement="bottom">
-          <i class="text-muted far fa-question-circle"></i>
-        </a>
-      </label>
-      <input class="form-control" type="text" formControlName="nccr"/>
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-half">
+            <button type="button" class="w3-button w3-round w3-border w3-border-red w3-margin-right" (click)="goPreviousStep()">
+                <i class="fas fa-arrow-alt-circle-left"></i> Enrere
+            </button>
+            <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!idDataControl.valid">
+                Següent <i class="fas fa-arrow-alt-circle-right"></i>
+            </button>
+        </div>
     </div>
-    <small class="w3-margin-left form-text text-muted">
-      Només és obligatori un d'aquests dos camps. Pot emplenar o bé el CIP o bé el NCCR o bé ambdós
-    </small>
-  </div>
-  <div class="w3-row-padding w3-margin-top">
-    <div class="w3-half">
-      <label for="email">
-        Email (opcional):
-      </label>
-      <input class="form-control" type="text" id="email" formControlName="email"/>
-      <small *ngIf="!idDataControl.get('email').valid" class="helper-text text-danger">Email no vàlid</small>
-    </div>
-    <div class="w3-half">
-      <label for="phone">
-        Telèfon (opcional):
-      </label>
-      <input class="form-control" type="text" id="phone" formControlName="phone"/>
-      <small *ngIf="!idDataControl.get('phone').valid" class="helper-text text-danger">Telèfon no vàlid</small>
-    </div>
-  </div>
-  <div class="w3-row-padding w3-margin-top">
-      <div class="w3-half">
-        <button type="button" class="w3-button w3-round w3-border w3-border-red w3-margin-right" (click)="goPreviousStep()">
-          <i class="fas fa-arrow-alt-circle-left"></i> Enrere
-        </button>
-        <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!idDataControl.valid">
-          Següent <i class="fas fa-arrow-alt-circle-right"></i>
-        </button>
-    </div>
-  </div>
 </form>
 <div class="w3-margin-top w3-margin-left">
-  <p id="metaInfo">
-    És important tenir les dades actualitzades a l'RCA (Registre Central d'Assegurats), ho pot comprovar truncant al 061.
-  </p>
+    <p id="metaInfo">
+        És important tenir les dades actualitzades a l'RCA (Registre Central d'Assegurats), ho pot comprovar truncant al 061.
+    </p>
 </div>

@@ -1,4 +1,4 @@
-<form [formGroup]="perdudaControl" (ngSubmit)="submit">
+<form [formGroup]="perdudaControl" (ngSubmit)="finalSubmit()">
     <div class="w3-row-padding w3-margin-top">
         <div class="form-group">
             <div class="row">
@@ -33,11 +33,21 @@
                 </div>
             </div>
         </div>
-        <div class="form-group row" *ngIf="perdudaControl.get('mediaRecieved').value=='email'">
+        <div class="form-group row" [hidden]="perdudaControl.get('mediaRecieved').value!='email'">
             <label for="emailText" class="col-sm-3 col-form-label">
                 Escrigui el correu electrònic:
             </label>
             <input type="text" formControlName="email" id="emailText" class="form-control col-sm-9"/>
+        </div>
+    </div>
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-half">
+            <button type="button" class="w3-button w3-round w3-border w3-border-red w3-margin-right" (click)="goPreviousStep()">
+                <i class="fas fa-arrow-alt-circle-left"></i> Enrere
+            </button>
+            <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!perdudaControl.valid">
+                Següent <i class="fas fa-arrow-alt-circle-right"></i>
+            </button>
         </div>
     </div>
 </form>
