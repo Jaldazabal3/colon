@@ -25,7 +25,7 @@ export class PerdudaComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {  }
 
-  private finalSubmit(){
+  private finalSubmit() {
     console.log('Submit to email');
   }
 
@@ -39,7 +39,7 @@ export class PerdudaComponent implements OnInit {
    * @return object with a true boolean attribute if the email is required and the user has not filled it out,
    * null otherwise.
    */
-  private customValidation(formGroup): any{
+  private customValidation(formGroup): any {
     /* tslint:disable:no-string-literal */
     const mediaRecievedField = formGroup.controls['mediaRecieved'].value;
     const emailField = formGroup.controls['email'].value;

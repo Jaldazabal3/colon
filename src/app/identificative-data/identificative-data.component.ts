@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { Validators, FormBuilder} from '@angular/forms';
 
 
@@ -26,6 +26,8 @@ export class IdentificativeDataComponent implements OnInit {
 
   @Output() gonePrevious = new EventEmitter();
   @Output() submittedIdData = new EventEmitter();
+
+  @Input() emailIdData: string;
 
   ngOnInit() {
   }
