@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-different-address',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DifferentAddressComponent implements OnInit {
 
+  @Output() gonePrevious = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  private goPreviousStep() {
+    this.gonePrevious.emit();
+  }
+  private finalSubmit() {
+    // TODO
+  }
 }

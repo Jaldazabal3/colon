@@ -17,17 +17,19 @@ export class IdentificativeDataComponent implements OnInit {
     email: ['', Validators.email],
     phone: ['', Validators.pattern('^\\d{9}$')]
   },
-    {
-      validators: this.customValidation
-    });
+  {
+    validators: this.customValidation
+  });
 
   cipImageLink = 'assets/image/tarjeta_sanitaria.jpg';
   nccrImageLink = 'assets/image/carta_header.jpg';
 
   @Output() gonePrevious = new EventEmitter();
   @Output() submittedIdData = new EventEmitter();
+  @Output() emailIdChange = new EventEmitter();
 
-  @Input() emailIdData: string;
+  // Email passed from consultes
+  // @Input() emailIdData: string;
 
   ngOnInit() {
   }
@@ -53,5 +55,9 @@ export class IdentificativeDataComponent implements OnInit {
     const nccrField = formGroup.controls['nccr'].value;
     const cipField = formGroup.controls['cip'].value;
     return (nccrField === '' && cipField === '') ? { bothEmpty: true } : null;
+  }
+
+  private changeEmail(){
+    this.emailIdChange.emit(this.idDataControl.get('email').value);
   }
 }

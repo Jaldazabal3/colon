@@ -6,7 +6,11 @@
 
   <!--1 - DADES IDENTIFICATIVES-->
   <div [hidden]="formStep!=1">
-    <app-identificative-data (submittedIdData)="goToStep2()" (gonePrevious)="goToStep0()" ></app-identificative-data>
+    <app-identificative-data
+            (submittedIdData)="goToStep2()"
+            (gonePrevious)="goToStep0()"
+            (emailIdChange)="setUserEmailFromID($event)"
+    ></app-identificative-data>
   </div>
 
   <!--2 - MOTIU-->
@@ -16,21 +20,30 @@
 
   <!--3 - CARTA REBUDA A UNA ALTRA ADREÇA-->
   <div [hidden]="formStep!=3">
-    <app-different-address></app-different-address>
+    <app-different-address
+            (gonePrevious)="goToStep2()"
+    ></app-different-address>
   </div>
 
   <!--4 - CARTA NO REBUDA-->
-  <!--TODO: Carta no rebuda-->
+  <div [hidden]="formStep!=4">
+    <app-no-rebuda
+            (gonePrevious)="goToStep2()"
+    ></app-no-rebuda>
+  </div>
 
   <!--5 - CARTA PERDUDA -->
   <div [hidden]="formStep!=5">
-    <app-perduda (gonePrevious)="goToStep2()"></app-perduda>
+    <app-perduda
+            (gonePrevious)="goToStep2()"
+            (emailPerdChange)="setUserEmailFromPerduda($event)"
+    ></app-perduda>
   </div>
 
 
-  <div class="w3-margin-top w3-margin-left">
-  <!--  <button type="button" class="btn btn-primary" (click)="logData()">
-      Try Me!
-    </button>-->
-  </div>
+  <!--<div class="w3-margin-top w3-margin-left">-->
+    <!--<button type="button" class="btn btn-primary" (click)="logData()">-->
+      <!--Try Me!-->
+    <!--</button>-->
+  <!--</div>-->
 </div>

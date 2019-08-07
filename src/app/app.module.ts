@@ -22,6 +22,7 @@ import { DifferentAddressComponent } from './different-address/different-address
 import {MunicipiComponent} from './municipi/municipi.component';
 import { PerdudaComponent } from './perduda/perduda.component';
 import { NoRebudaComponent } from './no-rebuda/no-rebuda.component';
+import { ResultatsPerdutsComponent } from './resultats-perduts/resultats-perduts.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NoRebudaComponent } from './no-rebuda/no-rebuda.component';
     MunicipiComponent,
     DifferentAddressComponent,
     PerdudaComponent,
-    NoRebudaComponent
+    NoRebudaComponent,
+    ResultatsPerdutsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-no-rebuda',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoRebudaComponent implements OnInit {
 
+  @Output() gonePrevious = new EventEmitter();
+
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  private goPreviousStep() {
+    this.gonePrevious.emit();
+  }
+  private finalSubmit() {
+    // TODO
   }
 
 }

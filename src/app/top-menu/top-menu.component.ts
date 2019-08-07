@@ -40,9 +40,9 @@ export class TopMenuComponent implements OnInit {
     handleScroll(){
       const windowScroll = window.pageYOffset;
       if (windowScroll >= this.menuPosition) {
-        this.sticky=true;
+        this.sticky = true;
       } else {
-        this.sticky=false;
+        this.sticky = false;
       }
-    } 
+    }
 }

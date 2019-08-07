@@ -37,7 +37,13 @@
             <label for="emailText" class="col-sm-3 col-form-label">
                 Escrigui el correu electrònic:
             </label>
-            <input type="text" formControlName="email" id="emailText" class="form-control col-sm-9"/>
+            <input
+                    type="text"
+                    formControlName="email"
+                    id="emailText"
+                    class="form-control col-sm-9"
+                    (ngModelChange)="changeEmail()"
+            />
         </div>
     </div>
     <div class="w3-row-padding w3-margin-top">
@@ -46,7 +52,7 @@
                 <i class="fas fa-arrow-alt-circle-left"></i> Enrere
             </button>
             <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!perdudaControl.valid">
-                Següent <i class="fas fa-arrow-alt-circle-right"></i>
+                Envia
             </button>
         </div>
     </div>

@@ -18,6 +18,8 @@ export class PerdudaComponent implements OnInit {
 
 
   @Output() gonePrevious = new EventEmitter();
+  @Output() submittedPerduda = new EventEmitter();
+  @Output() emailPerdChange = new EventEmitter();
 
 
   ngOnInit() {
@@ -48,5 +50,9 @@ export class PerdudaComponent implements OnInit {
     } else {
       return null;
     }
+  }
+
+  private changeEmail() {
+    this.emailPerdChange.emit(this.perdudaControl.get('email').value);
   }
 }

@@ -19,6 +19,8 @@ export class ConsultesComponent implements OnInit {
   @ViewChild(MotivoComponent) formMotivo: MotivoComponent;
   @ViewChild(PerdudaComponent) formPerduda: PerdudaComponent;
 
+  userEmail = '';
+
 
   /* Form steps will be:
     0- Municipi
@@ -32,7 +34,7 @@ export class ConsultesComponent implements OnInit {
   formStep: number;
 
   constructor() {
-    this.formStep = 5;
+    this.formStep = 1;
   }
 
   goToStep2() {
@@ -58,6 +60,21 @@ export class ConsultesComponent implements OnInit {
    * Function only for testing purposes. Checking how to access variables inside children components
    */
   logData() {
-    console.log(this.formIdentificationData.idDataControl.get('nccr').value);
+    // console.log(this.formIdentificationData.idDataControl.get('email').value);
+    console.log(this.userEmail);
+  }
+
+  private setUserEmailFromID(email) {
+    this.userEmail = email;
+    if (this.formStep !== 5) {
+      this.formPerduda.perdudaControl.get('email').setValue(email);
+    }
+  }
+
+  private setUserEmailFromPerduda(email) {
+    this.userEmail = email;
+    if (this.formStep !== 1) {
+      this.formIdentificationData.idDataControl.get('email').setValue(email);
+    }
   }
 }

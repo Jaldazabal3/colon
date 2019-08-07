@@ -43,7 +43,7 @@
             <label for="email">
                 Email (opcional):
             </label>
-            <input class="form-control" type="text" id="email" formControlName="email"/>
+            <input class="form-control" type="text" id="email" formControlName="email" (ngModelChange)="changeEmail()"/>
             <small *ngIf="!idDataControl.get('email').valid" class="helper-text text-danger">Email no vàlid</small>
         </div>
         <div class="w3-half">
