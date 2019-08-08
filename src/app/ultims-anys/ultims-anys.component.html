@@ -1,0 +1,11 @@
+<div class="w3-container w3-margin-top">
+    <!--ANY EXPLORACIO-->
+    <div
+            [hidden]="tempsUltimaColono!=-1 || seguimentProgramat!=-1"
+    >
+        <app-any-exploracio
+                (gonePrevious)="goPreviousStep()"
+                (submittedAnyExploracio)="computeLastColono()"
+        ></app-any-exploracio>
+    </div>
+</div>

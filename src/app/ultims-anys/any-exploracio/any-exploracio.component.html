@@ -1,0 +1,23 @@
+<form [formGroup]="anyExploracioControl" (ngSubmit)="submitAnyExploracio()">
+  <div class="w3-row-padding">
+    <label>
+      <b>Any de l'exploració</b>
+    </label>
+    <select class="form-control" formControlName="anyExploracio">
+      <option value="" disabled selected>Selecciona...</option>
+      <option *ngFor="let year of rangeYears" [ngValue]="year">
+        {{year}}
+      </option>
+    </select>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-half">
+      <button class="w3-button w3-round w3-border w3-border-red w3-margin-right" type="button" (click)="goPreviousStep()">
+        <i class="fas fa-arrow-alt-circle-left"></i> Enrere
+      </button>
+      <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!anyExploracioControl.valid">
+        Següent <i class="fas fa-arrow-alt-circle-right"></i>
+      </button>
+    </div>
+  </div>
+</form>

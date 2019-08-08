@@ -23,6 +23,9 @@ import {MunicipiComponent} from './municipi/municipi.component';
 import { PerdudaComponent } from './perduda/perduda.component';
 import { NoRebudaComponent } from './no-rebuda/no-rebuda.component';
 import { ResultatsPerdutsComponent } from './resultats-perduts/resultats-perduts.component';
+import { UltimsAnysComponent } from './ultims-anys/ultims-anys.component';
+import { AnyExploracioComponent } from './ultims-anys/any-exploracio/any-exploracio.component';
+import { MenorQueCincComponent } from './ultims-anys/menor-que-cinc/menor-que-cinc.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { ResultatsPerdutsComponent } from './resultats-perduts/resultats-perduts
     DifferentAddressComponent,
     PerdudaComponent,
     NoRebudaComponent,
-    ResultatsPerdutsComponent
+    ResultatsPerdutsComponent,
+    UltimsAnysComponent,
+    AnyExploracioComponent,
+    MenorQueCincComponent
   ],
   imports: [
     BrowserModule,

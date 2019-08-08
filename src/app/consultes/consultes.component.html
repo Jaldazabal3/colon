@@ -40,6 +40,13 @@
     ></app-perduda>
   </div>
 
+  <!--6 - ULTIMS 5 ANYS -->
+  <div [hidden]="formStep!=6">
+    <app-ultims-anys
+            (gonePrevious)="goToStep2()"
+    ></app-ultims-anys>
+  </div>
+
 
   <!--<div class="w3-margin-top w3-margin-left">-->
     <!--<button type="button" class="btn btn-primary" (click)="logData()">-->

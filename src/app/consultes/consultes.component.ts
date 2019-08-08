@@ -3,6 +3,7 @@ import { IdentificativeDataComponent } from '../identificative-data/identificati
 import { MotivoComponent } from '../motivo/motivo.component';
 import { MunicipiComponent } from '../municipi/municipi.component';
 import { PerdudaComponent } from '../perduda/perduda.component';
+import {UltimsAnysComponent} from '../ultims-anys/ultims-anys.component';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class ConsultesComponent implements OnInit {
   @ViewChild(IdentificativeDataComponent) formIdentificationData: IdentificativeDataComponent;
   @ViewChild(MotivoComponent) formMotivo: MotivoComponent;
   @ViewChild(PerdudaComponent) formPerduda: PerdudaComponent;
+  @ViewChild(UltimsAnysComponent) formUltimsAnys: UltimsAnysComponent;
 
   userEmail = '';
 
@@ -28,13 +30,15 @@ export class ConsultesComponent implements OnInit {
     2- Motiu
     3- He rebut la carta a una altra adreça (requadre)
     4- No he rebut la carta (requadre)
-    5- He perdut la carta (com rebre el duplicat)
+    5- He perdut la carta || he perdut la carta del resultat
+    6- Tinc realitzada una colonoscòpia als últims 5 anys || Diagnosticat amb pòlips o adenomes
+    LAST- Missatge final que no permeti tornar enrere
    */
 
   formStep: number;
 
   constructor() {
-    this.formStep = 1;
+    this.formStep = 6;
   }
 
   goToStep2() {
@@ -76,5 +80,9 @@ export class ConsultesComponent implements OnInit {
     if (this.formStep !== 1) {
       this.formIdentificationData.idDataControl.get('email').setValue(email);
     }
+  }
+
+  private validateData() {
+    return true;
   }
 }

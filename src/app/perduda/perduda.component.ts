@@ -12,9 +12,9 @@ export class PerdudaComponent implements OnInit {
     mediaRecieved: ['', Validators.required],
     email: ['', Validators.email]
   },
-    {
-      validators: this.customValidation
-    });
+  {
+    validators: this.customValidation
+  });
 
 
   @Output() gonePrevious = new EventEmitter();
