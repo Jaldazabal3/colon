@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,10 @@ import { Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./menor-que-cinc.component.css']
 })
 export class MenorQueCincComponent implements OnInit {
+
+
+  @Output() gonePrevious = new EventEmitter();
+  @Output() submittedMenorCinc = new EventEmitter();
 
   menorQueCincControl = this.formBuilder.group({
     seguimentProgramat: ['', Validators.required]
@@ -17,4 +21,10 @@ export class MenorQueCincComponent implements OnInit {
   ngOnInit() {
   }
 
+  private seguimentSubmit() {
+    this.submittedMenorCinc.emit();
+  }
+  private goPreviousStep() {
+    this.gonePrevious.emit();
+  }
 }

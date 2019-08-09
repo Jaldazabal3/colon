@@ -44,7 +44,14 @@
   <div [hidden]="formStep!=6">
     <app-ultims-anys
             (gonePrevious)="goToStep2()"
+            (submitUltimsAnys)="goFinalStep()"
     ></app-ultims-anys>
+  </div>
+
+  <div [hidden]="formStep!=11">
+    <app-final-message
+
+    ></app-final-message>
   </div>
 
 

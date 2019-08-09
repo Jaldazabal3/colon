@@ -26,6 +26,8 @@ import { ResultatsPerdutsComponent } from './resultats-perduts/resultats-perduts
 import { UltimsAnysComponent } from './ultims-anys/ultims-anys.component';
 import { AnyExploracioComponent } from './ultims-anys/any-exploracio/any-exploracio.component';
 import { MenorQueCincComponent } from './ultims-anys/menor-que-cinc/menor-que-cinc.component';
+import { FinalMessageComponent } from './final-message/final-message.component';
+import { InfoExploracioComponent } from './info-exploracio/info-exploracio.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { MenorQueCincComponent } from './ultims-anys/menor-que-cinc/menor-que-ci
     ResultatsPerdutsComponent,
     UltimsAnysComponent,
     AnyExploracioComponent,
-    MenorQueCincComponent
+    MenorQueCincComponent,
+    FinalMessageComponent,
+    InfoExploracioComponent
   ],
   imports: [
     BrowserModule,

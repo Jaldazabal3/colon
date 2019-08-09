@@ -4,8 +4,19 @@
             [hidden]="tempsUltimaColono!=-1 || seguimentProgramat!=-1"
     >
         <app-any-exploracio
-                (gonePrevious)="goPreviousStep()"
+                (gonePrevious)="goStepMotivo()"
                 (submittedAnyExploracio)="computeLastColono()"
         ></app-any-exploracio>
+    </div>
+    <div [hidden]="tempsUltimaColono<5 || seguimentProgramat!=-1">
+        <app-menor-que-cinc
+                (gonePrevious)="goChooseYear()"
+                (submittedMenorCinc)="computeSeguimentProgramat()"
+        ></app-menor-que-cinc>
+    </div>
+    <div [hidden]="tempsUltimaColono<5 || seguimentProgramat!=1">
+        <app-info-exploracio
+
+        ></app-info-exploracio>
     </div>
 </div>

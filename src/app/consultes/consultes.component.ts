@@ -32,7 +32,7 @@ export class ConsultesComponent implements OnInit {
     4- No he rebut la carta (requadre)
     5- He perdut la carta || he perdut la carta del resultat
     6- Tinc realitzada una colonoscòpia als últims 5 anys || Diagnosticat amb pòlips o adenomes
-    LAST- Missatge final que no permeti tornar enrere
+    11- (LAST?) Missatge final que no permeti tornar enrere
    */
 
   formStep: number;
@@ -55,6 +55,10 @@ export class ConsultesComponent implements OnInit {
 
   goToStepMotivo() {
     this.formStep = this.formMotivo.motivoControl.get('motivos').value.step;
+  }
+
+  goFinalStep() {
+    this.formStep = 11;
   }
 
   ngOnInit() {

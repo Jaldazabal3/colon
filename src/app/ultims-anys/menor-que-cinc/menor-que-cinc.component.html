@@ -1,3 +1,46 @@
-<p>
-  menor-que-cinc works!
-</p>
+<form [formGroup]="menorQueCincControl" (ngSubmit)="seguimentSubmit()">
+  <p>
+    <b>Respongui a les següents preguntes per a poder donar resposta a la seva consulta:</b>
+  </p>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="form-group">
+      <div class="row w3-row-padding">
+        <legend class="col-form-label">
+          Té programat un seguiment?
+        </legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input
+                    type="radio"
+                    class="form-check-input"
+                    formControlName="seguimentProgramat"
+                    id="yes"
+                    value="true"
+            />
+            <label for="yes">Si</label>
+          </div>
+          <div class="form-check">
+            <input
+                    type="radio"
+                    class="form-check-input"
+                    formControlName="seguimentProgramat"
+                    id="no"
+                    value="false"
+            />
+            <label for="no">No</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-half">
+      <button class="w3-button w3-round w3-border w3-border-red w3-margin-right" type="button" (click)="goPreviousStep()">
+        <i class="fas fa-arrow-alt-circle-left"></i> Enrere
+      </button>
+      <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!menorQueCincControl.valid">
+        Següent <i class="fas fa-arrow-alt-circle-right"></i>
+      </button>
+    </div>
+  </div>
+</form>

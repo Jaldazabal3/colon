@@ -1,0 +1,26 @@
+<form [formGroup]="infoExploracioControl" (ngSubmit)="submitInfoExplor()">
+  <div class="w3-row-padding w3-margin-top">
+    <label>
+      Centre sanitari on li van fer l'exploració
+    </label>
+    <input type="text" class="form-control" formControlName="centreSanitari"/>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <label>
+      Motiu de la realització
+    </label>
+    <input type="text" class="form-control" formControlName="centreSanitari"/>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <label>
+      Si disposa de l'informe de la colonoscòpia i anatomia patològica adjunti'ls
+    </label>
+    <input type="file" class="form-control-file" formControlName="centreSanitari"/>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <label>
+      Expliqui breument el resultat de la colonoscòpia
+    </label>
+    <input type="text" class="form-control" formControlName="centreSanitari"/>
+  </div>
+</form>
