@@ -7,15 +7,19 @@
   <!--1 - DADES IDENTIFICATIVES-->
   <div [hidden]="formStep!=1">
     <app-identificative-data
-            (submittedIdData)="goToStep2()"
             (gonePrevious)="goToStep0()"
+            (submittedIdData)="goToStep2()"
             (emailIdChange)="setUserEmailFromID($event)"
+            (phoneIdChange)="setUserPhoneFromID($event)"
     ></app-identificative-data>
   </div>
 
   <!--2 - MOTIU-->
   <div [hidden]="formStep!=2">
-    <app-motivo (submittedMotivo)="goToStepMotivo()" (gonePrevious)="goToStep1()"></app-motivo>
+    <app-motivo
+            (gonePrevious)="goToStep1()"
+            (submittedMotivo)="goToStepMotivo()"
+    ></app-motivo>
   </div>
 
   <!--3 - CARTA REBUDA A UNA ALTRA ADREÇA-->
@@ -45,6 +49,8 @@
     <app-ultims-anys
             (gonePrevious)="goToStep2()"
             (submitUltimsAnys)="goFinalStep()"
+            (emailContactChange)="setUserEmailFromContact($event)"
+            (phoneContactChange)="setUserPhoneFromContact($event)"
     ></app-ultims-anys>
   </div>
 

@@ -27,6 +27,7 @@ export class IdentificativeDataComponent implements OnInit {
   @Output() gonePrevious = new EventEmitter();
   @Output() submittedIdData = new EventEmitter();
   @Output() emailIdChange = new EventEmitter();
+  @Output() phoneIdChange = new EventEmitter();
 
   // Email passed from consultes
   // @Input() emailIdData: string;
@@ -57,7 +58,11 @@ export class IdentificativeDataComponent implements OnInit {
     return (nccrField === '' && cipField === '') ? { bothEmpty: true } : null;
   }
 
-  private changeEmail(){
+  private changeEmail() {
     this.emailIdChange.emit(this.idDataControl.get('email').value);
+  }
+
+  private changePhone() {
+    this.phoneIdChange.emit(this.idDataControl.get('phone').value);
   }
 }

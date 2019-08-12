@@ -28,6 +28,7 @@ import { AnyExploracioComponent } from './ultims-anys/any-exploracio/any-explora
 import { MenorQueCincComponent } from './ultims-anys/menor-que-cinc/menor-que-cinc.component';
 import { FinalMessageComponent } from './final-message/final-message.component';
 import { InfoExploracioComponent } from './info-exploracio/info-exploracio.component';
+import { ContactTelEmailComponent } from './contact-tel-email/contact-tel-email.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { InfoExploracioComponent } from './info-exploracio/info-exploracio.compo
     AnyExploracioComponent,
     MenorQueCincComponent,
     FinalMessageComponent,
-    InfoExploracioComponent
+    InfoExploracioComponent,
+    ContactTelEmailComponent
   ],
   imports: [
     BrowserModule,

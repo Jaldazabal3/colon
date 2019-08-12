@@ -50,7 +50,7 @@
             <label for="phone">
                 Telèfon (opcional):
             </label>
-            <input class="form-control" type="text" id="phone" formControlName="phone"/>
+            <input class="form-control" type="text" id="phone" formControlName="phone" (ngModelChange)="changePhone()"/>
             <small *ngIf="!idDataControl.get('phone').valid" class="helper-text text-danger">Telèfon no vàlid</small>
         </div>
     </div>

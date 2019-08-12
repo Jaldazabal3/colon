@@ -4,6 +4,7 @@ import { MotivoComponent } from '../motivo/motivo.component';
 import { MunicipiComponent } from '../municipi/municipi.component';
 import { PerdudaComponent } from '../perduda/perduda.component';
 import {UltimsAnysComponent} from '../ultims-anys/ultims-anys.component';
+import {ContactTelEmailComponent} from '../contact-tel-email/contact-tel-email.component';
 
 
 @Component({
@@ -13,7 +14,6 @@ import {UltimsAnysComponent} from '../ultims-anys/ultims-anys.component';
 })
 export class ConsultesComponent implements OnInit {
 
-
   // This allows us to access variables into subforms
   @ViewChild(MunicipiComponent) formMunicipi: MunicipiComponent;
   @ViewChild(IdentificativeDataComponent) formIdentificationData: IdentificativeDataComponent;
@@ -22,6 +22,7 @@ export class ConsultesComponent implements OnInit {
   @ViewChild(UltimsAnysComponent) formUltimsAnys: UltimsAnysComponent;
 
   userEmail = '';
+  userPhone = '';
 
 
   /* Form steps will be:
@@ -38,7 +39,7 @@ export class ConsultesComponent implements OnInit {
   formStep: number;
 
   constructor() {
-    this.formStep = 6;
+    this.formStep = 0;
   }
 
   goToStep2() {
@@ -46,6 +47,8 @@ export class ConsultesComponent implements OnInit {
   }
 
   goToStep1() {
+    this.formIdentificationData.idDataControl.get('email').setValue(this.userEmail);
+    this.formIdentificationData.idDataControl.get('phone').setValue(this.userPhone);
     this.formStep = 1;
   }
 
@@ -55,6 +58,12 @@ export class ConsultesComponent implements OnInit {
 
   goToStepMotivo() {
     this.formStep = this.formMotivo.motivoControl.get('motivos').value.step;
+    if (this.formStep === 5) {
+      this.formPerduda.perdudaControl.get('email').setValue(this.userEmail);
+    } else if(this.formStep === 6) {
+      this.formUltimsAnys.formContactTelEmail.contactTelEmailControl.get('email').setValue(this.userEmail);
+      this.formUltimsAnys.formContactTelEmail.contactTelEmailControl.get('phone').setValue(this.userPhone);
+    }
   }
 
   goFinalStep() {
@@ -74,16 +83,22 @@ export class ConsultesComponent implements OnInit {
 
   private setUserEmailFromID(email) {
     this.userEmail = email;
-    if (this.formStep !== 5) {
-      this.formPerduda.perdudaControl.get('email').setValue(email);
-    }
   }
 
   private setUserEmailFromPerduda(email) {
     this.userEmail = email;
-    if (this.formStep !== 1) {
-      this.formIdentificationData.idDataControl.get('email').setValue(email);
-    }
+  }
+
+  private setUserEmailFromContact(email) {
+    this.userEmail = email;
+  }
+
+  private setUserPhoneFromID(phone) {
+    this.userPhone = phone;
+  }
+
+  private setUserPhoneFromContact(phone) {
+    this.userPhone = phone;
   }
 
   private validateData() {

@@ -16,7 +16,15 @@
     </div>
     <div [hidden]="tempsUltimaColono<5 || seguimentProgramat!=1">
         <app-info-exploracio
-
+                (gonePrevious)="goSeguimentProgramat()"
+                (submittedInfoExplor)="goContactTelEmail()"
         ></app-info-exploracio>
+    </div>
+    <div [hidden]="tempsUltimaColono<5 || seguimentProgramat!=2">
+        <app-contact-tel-email
+                (gonePrevious)="goInfoExplor()"
+                (emailContactChange)="this.emailContactChange.emit($event)"
+                (phoneContactChange)="this.phoneContactChange.emit($event)"
+        ></app-contact-tel-email>
     </div>
 </div>

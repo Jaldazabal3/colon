@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./info-exploracio.component.css']
 })
 export class InfoExploracioComponent implements OnInit {
+
+  @Output() gonePrevious = new EventEmitter();
+  @Output() submittedInfoExplor = new EventEmitter();
 
   infoExploracioControl = this.formBuilder.group({
     centreSanitari: ['', Validators.required],
@@ -17,6 +20,14 @@ export class InfoExploracioComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+  }
+
+  private goPreviousStep(){
+    this.gonePrevious.emit();
+  }
+
+  private submitInfoExplor() {
+    this.submittedInfoExplor.emit();
   }
 
 }

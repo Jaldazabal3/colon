@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { AnyExploracioComponent } from './any-exploracio/any-exploracio.component';
 import {MenorQueCincComponent} from './menor-que-cinc/menor-que-cinc.component';
+import {InfoExploracioComponent} from '../info-exploracio/info-exploracio.component';
+import {ContactTelEmailComponent} from '../contact-tel-email/contact-tel-email.component';
 
 @Component({
   selector: 'app-ultims-anys',
@@ -9,20 +11,23 @@ import {MenorQueCincComponent} from './menor-que-cinc/menor-que-cinc.component';
 })
 export class UltimsAnysComponent implements OnInit {
 
-
   @ViewChild(AnyExploracioComponent) formAnyExploracio: AnyExploracioComponent;
   @ViewChild(MenorQueCincComponent) formMenorQueCinc: MenorQueCincComponent;
+  @ViewChild(InfoExploracioComponent) formInfoExplor: InfoExploracioComponent;
+  @ViewChild(ContactTelEmailComponent) formContactTelEmail: ContactTelEmailComponent;
 
   @Output() gonePrevious = new EventEmitter();
   @Output() submitUltimsAnys = new EventEmitter();
+  @Output() emailContactChange = new EventEmitter();
+  @Output() phoneContactChange = new EventEmitter();
 
   tempsUltimaColono: number;
-  // Seguiment programat: -1 no es mostra res, 0 no, 1 si
   seguimentProgramat: number;
+  // Seguiment programat: -1 no es mostra res, 0 no, 1 pas info exploracio, 2 form tel/email
 
   constructor() {
-    this.tempsUltimaColono = 5;
-    this.seguimentProgramat = 1;
+    this.tempsUltimaColono = -1;
+    this.seguimentProgramat = -1;
   }
 
   ngOnInit() {
@@ -34,6 +39,10 @@ export class UltimsAnysComponent implements OnInit {
 
   private goChooseYear() {
     this.tempsUltimaColono = -1;
+  }
+
+  private goSeguimentProgramat() {
+    this.seguimentProgramat = -1;
   }
 
   /**
@@ -53,5 +62,13 @@ export class UltimsAnysComponent implements OnInit {
       this.seguimentProgramat = 0;
       this.submitUltimsAnys.emit();
     }
+  }
+
+  private goContactTelEmail() {
+    this.seguimentProgramat = 2;
+  }
+
+  private goInfoExplor() {
+    this.seguimentProgramat = 1;
   }
 }
