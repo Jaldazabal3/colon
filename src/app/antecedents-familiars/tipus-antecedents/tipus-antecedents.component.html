@@ -22,7 +22,7 @@
           <input type="number" formControlName="nombrePares" class="w3-input w3-border"/>
         </td>
         <td>
-          <input type="number" formControlName="agePares" class="w3-input w3-border"/>
+          <input type="number" formControlName="agePares" class="w3-input w3-border" [attr.disabled]="tipusAntecedentsControl.get('nombrePares').value < 1 ? 0 : null"/>
         </td>
       </tr>
       <tr>
@@ -33,7 +33,7 @@
           <input type="number" formControlName="nombreGermans" class="w3-input w3-border"/>
         </td>
         <td>
-          <input type="number" formControlName="ageGermans" class="w3-input w3-border"/>
+          <input type="number" formControlName="ageGermans" class="w3-input w3-border" [attr.disabled]="tipusAntecedentsControl.get('nombreGermans').value < 1 ? 0 : null"/>
         </td>
       </tr>
       <tr>
@@ -44,7 +44,7 @@
           <input type="number" formControlName="nombreFills" class="w3-input w3-border"/>
         </td>
         <td>
-          <input type="number" formControlName="ageFills" class="w3-input w3-border"/>
+          <input type="number" formControlName="ageFills" class="w3-input w3-border" [attr.disabled]="tipusAntecedentsControl.get('nombreFills').value < 1 ? 0 : null"/>
         </td>
       </tr>
     </tbody>

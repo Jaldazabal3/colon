@@ -80,9 +80,13 @@ export class AntecedentsFamiliarsComponent implements OnInit {
     const mesJove: number = ages.sort()[1];
     if (nombreFamiliars < 2 && mesJove >= 60) {
       this.tipusAntecedents = 0;
-    } else{
+    } else {
       this.tipusAntecedents = 1;
     }
+  }
+
+  private goTipusAntecedents() {
+    this.tipusAntecedents = -1;
   }
 
   private computeControlColono() {
