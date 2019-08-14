@@ -1,0 +1,15 @@
+<div class="w3-container w3-margin-top">
+  <div [hidden]="colonoRealitzada!=-1 || antecedentsFamiliars!=-1 || tipusAntecedents!=-1">
+    <app-primer-grau
+            (gonePrevious)="goStepMotivo()"
+            (submittedPrimerGrau)="computePrimerGrau()"
+    ></app-primer-grau>
+  </div>
+
+  <div [hidden]="antecedentsFamiliars!=0 && tipusAntecedents!=0 || colonoRealitzada!=-1">
+    <app-colono-realitzada
+            (gonePrevious)="goPrimerGrau()"
+            (submittedColonoRealitzada)="computeColonoRealitzada()"
+    ></app-colono-realitzada>
+  </div>
+</div>

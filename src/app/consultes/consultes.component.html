@@ -54,6 +54,19 @@
     ></app-ultims-anys>
   </div>
 
+  <div [hidden]="formStep!=7">
+    <app-ulcerosa-crohn
+            (gonePrevious)="goToStep2()"
+            (submittedUlcerosaCrohn)="goFinalStep()"
+    ></app-ulcerosa-crohn>
+  </div>
+
+  <div [hidden]="formStep!=8">
+    <app-antecedents-familiars
+            (gonePrevious)="goToStepMotivo()"
+    ></app-antecedents-familiars>
+  </div>
+
   <div [hidden]="formStep!=11">
     <app-final-message
 

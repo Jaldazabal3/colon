@@ -29,6 +29,10 @@ import { MenorQueCincComponent } from './ultims-anys/menor-que-cinc/menor-que-ci
 import { FinalMessageComponent } from './final-message/final-message.component';
 import { InfoExploracioComponent } from './info-exploracio/info-exploracio.component';
 import { ContactTelEmailComponent } from './contact-tel-email/contact-tel-email.component';
+import { UlcerosaCrohnComponent } from './ulcerosa-crohn/ulcerosa-crohn.component';
+import { AntecedentsFamiliarsComponent } from './antecedents-familiars/antecedents-familiars.component';
+import { PrimerGrauComponent } from './antecedents-familiars/primer-grau/primer-grau.component';
+import { ColonoRealitzadaComponent } from './antecedents-familiars/colono-realitzada/colono-realitzada.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { ContactTelEmailComponent } from './contact-tel-email/contact-tel-email.
     MenorQueCincComponent,
     FinalMessageComponent,
     InfoExploracioComponent,
-    ContactTelEmailComponent
+    ContactTelEmailComponent,
+    UlcerosaCrohnComponent,
+    AntecedentsFamiliarsComponent,
+    PrimerGrauComponent,
+    ColonoRealitzadaComponent
   ],
   imports: [
     BrowserModule,

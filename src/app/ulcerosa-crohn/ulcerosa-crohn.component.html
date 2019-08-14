@@ -1,0 +1,35 @@
+<form [formGroup]="ulcerosaCrohnControl" (ngSubmit)="goFinalStep()">
+  <legend>
+    Si us plau, informi'ns de les següents dades
+  </legend>
+  <div class="w3-row-padding w3-margin-top">
+    <label>
+      Data del diagnòstic:
+    </label>
+    <input
+            type="date"
+            class="form-control"
+            formControlName="diagnosiDate"
+    />
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <label>
+      Centre sanitari on li van diagnosticar:
+    </label>
+    <input
+            type="text"
+            class="form-control"
+            formControlName="centreSanitari"
+    />
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-half">
+      <button type="button" class="w3-button w3-round w3-border w3-border-red w3-margin-right" (click)="goPreviousStep()">
+        <i class="fas fa-arrow-alt-circle-left"></i> Enrere
+      </button>
+      <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!ulcerosaCrohnControl.valid">
+        Següent <i class="fas fa-arrow-alt-circle-right"></i>
+      </button>
+    </div>
+  </div>
+</form>

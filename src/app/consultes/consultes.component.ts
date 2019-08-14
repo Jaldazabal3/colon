@@ -33,13 +33,15 @@ export class ConsultesComponent implements OnInit {
     4- No he rebut la carta (requadre)
     5- He perdut la carta || he perdut la carta del resultat
     6- Tinc realitzada una colonoscòpia als últims 5 anys || Diagnosticat amb pòlips o adenomes
+    7- Estic diagnosticat de colitis ulcerosa o malaltia de Crohn | Estic diagnosticat de càncer de còlon i/o recte | Estic diagnosticat de Poliposi
+    8- Tinc antecedents familiars de càncer de còlon i/o recte
     11- (LAST?) Missatge final que no permeti tornar enrere
    */
 
   formStep: number;
 
   constructor() {
-    this.formStep = 0;
+    this.formStep = 8;
   }
 
   goToStep2() {
