@@ -1,0 +1,62 @@
+<form [formGroup]="tipusAntecedentsControl" (ngSubmit)="submitTipusAntecedents()">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Parentesc
+        </th>
+        <th>
+          Nombre de familiars amb càncer de còlon i/o recte
+        </th>
+        <th>
+          Edat del diagnòstic del familiar més jove
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Pare/Mare
+        </td>
+        <td>
+          <input type="number" formControlName="nombrePares" class="w3-input w3-border"/>
+        </td>
+        <td>
+          <input type="number" formControlName="agePares" class="w3-input w3-border"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Germà/Germana
+        </td>
+        <td>
+          <input type="number" formControlName="nombreGermans" class="w3-input w3-border"/>
+        </td>
+        <td>
+          <input type="number" formControlName="ageGermans" class="w3-input w3-border"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Fill/Filla
+        </td>
+        <td>
+          <input type="number" formControlName="nombreFills" class="w3-input w3-border"/>
+        </td>
+        <td>
+          <input type="number" formControlName="ageFills" class="w3-input w3-border"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-half">
+      <button class="w3-button w3-round w3-border w3-border-red w3-margin-right" type="button" (click)="goPreviousStep()">
+        <i class="fas fa-arrow-alt-circle-left"></i> Enrere
+      </button>
+      <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!tipusAntecedentsControl.valid">
+        Següent <i class="fas fa-arrow-alt-circle-right"></i>
+      </button>
+    </div>
+  </div>
+</form>

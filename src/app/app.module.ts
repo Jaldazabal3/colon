@@ -33,6 +33,8 @@ import { UlcerosaCrohnComponent } from './ulcerosa-crohn/ulcerosa-crohn.componen
 import { AntecedentsFamiliarsComponent } from './antecedents-familiars/antecedents-familiars.component';
 import { PrimerGrauComponent } from './antecedents-familiars/primer-grau/primer-grau.component';
 import { ColonoRealitzadaComponent } from './antecedents-familiars/colono-realitzada/colono-realitzada.component';
+import { TipusAntecedentsComponent } from './antecedents-familiars/tipus-antecedents/tipus-antecedents.component';
+import { ControlsColonoscopiaComponent } from './antecedents-familiars/controls-colonoscopia/controls-colonoscopia.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { ColonoRealitzadaComponent } from './antecedents-familiars/colono-realit
     UlcerosaCrohnComponent,
     AntecedentsFamiliarsComponent,
     PrimerGrauComponent,
-    ColonoRealitzadaComponent
+    ColonoRealitzadaComponent,
+    TipusAntecedentsComponent,
+    ControlsColonoscopiaComponent
   ],
   imports: [
     BrowserModule,

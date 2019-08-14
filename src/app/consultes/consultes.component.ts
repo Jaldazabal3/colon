@@ -58,6 +58,10 @@ export class ConsultesComponent implements OnInit {
     this.formStep = 0;
   }
 
+  goToStep6() {
+    this.formStep = 6;
+  }
+
   goToStepMotivo() {
     this.formStep = this.formMotivo.motivoControl.get('motivos').value.step;
     if (this.formStep === 5) {

@@ -6,10 +6,26 @@
     ></app-primer-grau>
   </div>
 
-  <div [hidden]="antecedentsFamiliars!=0 && tipusAntecedents!=0 || colonoRealitzada!=-1">
+<!--  <div [hidden]="antecedentsFamiliars!=0 && colonoRealitzada!=-1 || colonoRealitzada!=-1 && tipusAntecedents!=0">-->
+    <div [hidden]="colonoRealitzada!=-1 || (antecedentsFamiliars!=0 && tipusAntecedents!=0)">
     <app-colono-realitzada
             (gonePrevious)="goPrimerGrau()"
             (submittedColonoRealitzada)="computeColonoRealitzada()"
     ></app-colono-realitzada>
   </div>
+
+  <div [hidden]="antecedentsFamiliars!=1 || tipusAntecedents!=-1">
+    <app-tipus-antecedents
+            (gonePrevious)="goPrimerGrau()"
+            (submittedTipusAntecedents)="computeTipusAntecedents()"
+    ></app-tipus-antecedents>
+  </div>
+
+  <div [hidden]="antecedentsFamiliars!=1 || tipusAntecedents!=1 || controlsColono!=-1">
+    <app-controls-colonoscopia
+            (gonePrevious)="goTipusAntecedents()"
+            (submittedControlColono)="computeControlColono()"
+    ></app-controls-colonoscopia>
+  </div>
+
 </div>

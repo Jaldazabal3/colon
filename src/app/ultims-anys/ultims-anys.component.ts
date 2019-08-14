@@ -55,7 +55,6 @@ export class UltimsAnysComponent implements OnInit {
   }
 
   private computeSeguimentProgramat() {
-    console.log(this.formMenorQueCinc.menorQueCincControl.get('seguimentProgramat').value);
     if (this.formMenorQueCinc.menorQueCincControl.get('seguimentProgramat').value === 'true') {
       this.seguimentProgramat = 1;
     } else if (this.formMenorQueCinc.menorQueCincControl.get('seguimentProgramat').value === 'false') {

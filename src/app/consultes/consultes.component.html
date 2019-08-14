@@ -64,6 +64,8 @@
   <div [hidden]="formStep!=8">
     <app-antecedents-familiars
             (gonePrevious)="goToStepMotivo()"
+            (chosenColonoRealitzada)="goToStep6()"
+            (submittedAntecedentsFamiliars)="goFinalStep()"
     ></app-antecedents-familiars>
   </div>
 
