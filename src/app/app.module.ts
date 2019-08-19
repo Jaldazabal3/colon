@@ -35,6 +35,7 @@ import { PrimerGrauComponent } from './antecedents-familiars/primer-grau/primer-
 import { ColonoRealitzadaComponent } from './antecedents-familiars/colono-realitzada/colono-realitzada.component';
 import { TipusAntecedentsComponent } from './antecedents-familiars/tipus-antecedents/tipus-antecedents.component';
 import { ControlsColonoscopiaComponent } from './antecedents-familiars/controls-colonoscopia/controls-colonoscopia.component';
+import { MotiuAltresComponent } from './motiu-altres/motiu-altres.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ControlsColonoscopiaComponent } from './antecedents-familiars/controls-
     PrimerGrauComponent,
     ColonoRealitzadaComponent,
     TipusAntecedentsComponent,
-    ControlsColonoscopiaComponent
+    ControlsColonoscopiaComponent,
+    MotiuAltresComponent
   ],
   imports: [
     BrowserModule,

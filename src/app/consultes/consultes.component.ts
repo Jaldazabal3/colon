@@ -35,13 +35,14 @@ export class ConsultesComponent implements OnInit {
     6- Tinc realitzada una colonoscòpia als últims 5 anys || Diagnosticat amb pòlips o adenomes
     7- Estic diagnosticat de colitis ulcerosa o malaltia de Crohn | Estic diagnosticat de càncer de còlon i/o recte | Estic diagnosticat de Poliposi
     8- Tinc antecedents familiars de càncer de còlon i/o recte
-    11- (LAST?) Missatge final que no permeti tornar enrere
+    9- Altres
+    10- (LAST?) Missatge final que no permeti tornar enrere
    */
 
   formStep: number;
 
   constructor() {
-    this.formStep = 8;
+    this.formStep = 0;
   }
 
   goToStep2() {

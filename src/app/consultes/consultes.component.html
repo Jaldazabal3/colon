@@ -63,13 +63,22 @@
 
   <div [hidden]="formStep!=8">
     <app-antecedents-familiars
-            (gonePrevious)="goToStepMotivo()"
+            (gonePrevious)="goToStep2()"
             (chosenColonoRealitzada)="goToStep6()"
             (submittedAntecedentsFamiliars)="goFinalStep()"
     ></app-antecedents-familiars>
   </div>
 
-  <div [hidden]="formStep!=11">
+  <div [hidden]="formStep!=9">
+    <app-motiu-altres
+            (gonePrevious)="goToStep2()"
+            (emailContactChange)="setUserEmailFromContact()"
+            (phoneContactChange)="setUserPhoneFromContact()"
+            (submittedAltres)="goFinalStep()"
+    ></app-motiu-altres>
+  </div>
+
+  <div [hidden]="formStep!=10">
     <app-final-message
 
     ></app-final-message>
