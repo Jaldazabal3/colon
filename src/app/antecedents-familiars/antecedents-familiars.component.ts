@@ -51,8 +51,12 @@ export class AntecedentsFamiliarsComponent implements OnInit {
     }
   }
 
-  private goPrimerGrau() {
-    this.antecedentsFamiliars = -1;
+  private goMultiplePrevious() {
+    if(this.antecedentsFamiliars === 0) {
+      this.antecedentsFamiliars = -1;
+    } else if(this.antecedentsFamiliars === 1 && this.tipusAntecedents === 0) {
+      this.tipusAntecedents = -1;
+    }
   }
 
   private computeColonoRealitzada() {
@@ -77,8 +81,8 @@ export class AntecedentsFamiliarsComponent implements OnInit {
       this.formTipusAntecedents.tipusAntecedentsControl.get('ageGermans').value,
       this.formTipusAntecedents.tipusAntecedentsControl.get('ageFills').value
     ];
-    const mesJove: number = ages.sort()[1];
-    if (nombreFamiliars < 2 && mesJove >= 60) {
+    const mesJove: number = ages.filter(x =>  x !== 0).sort()[0];
+    if (nombreFamiliars < 2 && (mesJove >= 60 || mesJove === undefined)) {
       this.tipusAntecedents = 0;
     } else {
       this.tipusAntecedents = 1;

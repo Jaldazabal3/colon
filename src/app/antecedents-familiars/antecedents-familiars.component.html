@@ -9,7 +9,7 @@
 <!--  <div [hidden]="antecedentsFamiliars!=0 && colonoRealitzada!=-1 || colonoRealitzada!=-1 && tipusAntecedents!=0">-->
     <div [hidden]="colonoRealitzada!=-1 || (antecedentsFamiliars!=0 && tipusAntecedents!=0)">
     <app-colono-realitzada
-            (gonePrevious)="goPrimerGrau()"
+            (gonePrevious)="goMultiplePrevious()"
             (submittedColonoRealitzada)="computeColonoRealitzada()"
     ></app-colono-realitzada>
   </div>
