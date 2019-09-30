@@ -37,6 +37,17 @@ export class AntecedentsFamiliarsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.antecedentsFamiliars = -1;
+    this.colonoRealitzada = -1;
+    this.tipusAntecedents = -1;
+    this.controlsColono = -1;
+  }
+
+  initializeVariables() {
+    this.antecedentsFamiliars = -1;
+    this.colonoRealitzada = -1;
+    this.tipusAntecedents = -1;
+    this.controlsColono = -1;
   }
 
   private goStepMotivo() {
@@ -52,7 +63,7 @@ export class AntecedentsFamiliarsComponent implements OnInit {
   }
 
   private goMultiplePrevious() {
-    if(this.antecedentsFamiliars === 0) {
+    if (this.antecedentsFamiliars === 0) {
       this.antecedentsFamiliars = -1;
     } else if(this.antecedentsFamiliars === 1 && this.tipusAntecedents === 0) {
       this.tipusAntecedents = -1;

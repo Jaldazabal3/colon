@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { InformacioComponent } from "./informacio/informacio.component";
-import { ConsultesComponent } from "./consultes/consultes.component";
+import { InformacioComponent } from './informacio/informacio.component';
+import { ConsultesComponent } from './consultes/consultes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },

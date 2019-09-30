@@ -10,8 +10,8 @@ import { Validators, FormBuilder} from '@angular/forms';
 export class IdentificativeDataComponent implements OnInit {
 
   idDataControl = this.formBuilder.group({
-    cip: [''],
-    nccr: [''],
+    cip: ['', Validators.pattern('^\\D{4}\\d{10}$')],
+    nccr: ['', Validators.pattern('^\\d+$')],
     name: ['', Validators.required],
     surname: ['', Validators.required],
     email: ['', Validators.email],

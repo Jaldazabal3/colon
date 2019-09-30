@@ -52,6 +52,9 @@ export class UltimsAnysComponent implements OnInit {
     this.tempsUltimaColono =
       new Date().getFullYear() -
       this.formAnyExploracio.anyExploracioControl.get('anyExploracio').value;
+    if (this.tempsUltimaColono >= 5) {
+      this.submitUltimsAnys.emit();
+    }
   }
 
   private computeSeguimentProgramat() {

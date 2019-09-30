@@ -4,13 +4,14 @@
   </legend>
   <div class="w3-row-padding w3-margin-top">
     <label>
-      Data del diagnòstic:
+      Any del diagnòstic:
     </label>
-    <input
-            type="date"
-            class="form-control"
-            formControlName="diagnosiDate"
-    />
+    <select class="form-control" formControlName="diagnosiDate">
+      <option value="" disabled selected>Selecciona...</option>
+      <option *ngFor="let year of rangeYears" [ngValue]="year">
+        {{year}}
+      </option>
+    </select>
   </div>
   <div class="w3-row-padding w3-margin-top">
     <label>

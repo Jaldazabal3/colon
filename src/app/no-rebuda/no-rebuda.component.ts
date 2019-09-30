@@ -18,8 +18,5 @@ export class NoRebudaComponent implements OnInit {
   private goPreviousStep() {
     this.gonePrevious.emit();
   }
-  private finalSubmit() {
-    // TODO
-  }
 
 }

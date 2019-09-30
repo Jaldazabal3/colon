@@ -23,6 +23,7 @@
                 </a>
             </label>
             <input class="form-control" type="text" formControlName="cip"/>
+            <small *ngIf="!idDataControl.get('cip').valid" class="helper-text text-danger">El CIP no vàlid</small>
         </div>
         <div class="w3-half">
             <ng-template #nccrContent><img src="{{nccrImageLink}}" height="260" width="679"/></ng-template>
@@ -33,8 +34,9 @@
                 </a>
             </label>
             <input class="form-control" type="text" formControlName="nccr"/>
+            <small *ngIf="!idDataControl.get('nccr').valid" class="helper-text text-danger">El camp NCCR només pot tenir números</small>
         </div>
-        <small class="w3-margin-left form-text text-muted">
+        <small class="w3-col form-text text-muted">
             Només és obligatori un d'aquests dos camps. Pot emplenar o bé el CIP o bé el NCCR o bé ambdós
         </small>
     </div>

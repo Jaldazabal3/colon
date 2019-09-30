@@ -17,7 +17,4 @@ export class DifferentAddressComponent implements OnInit {
   private goPreviousStep() {
     this.gonePrevious.emit();
   }
-  private finalSubmit() {
-    // TODO
-  }
 }

@@ -5,6 +5,7 @@ import { MunicipiComponent } from '../municipi/municipi.component';
 import { PerdudaComponent } from '../perduda/perduda.component';
 import {UltimsAnysComponent} from '../ultims-anys/ultims-anys.component';
 import {ContactTelEmailComponent} from '../contact-tel-email/contact-tel-email.component';
+import {AntecedentsFamiliarsComponent} from '../antecedents-familiars/antecedents-familiars.component';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class ConsultesComponent implements OnInit {
   @ViewChild(MotivoComponent) formMotivo: MotivoComponent;
   @ViewChild(PerdudaComponent) formPerduda: PerdudaComponent;
   @ViewChild(UltimsAnysComponent) formUltimsAnys: UltimsAnysComponent;
+  @ViewChild(AntecedentsFamiliarsComponent) formAntecedents: AntecedentsFamiliarsComponent;
 
   userEmail = '';
   userPhone = '';
@@ -60,16 +62,20 @@ export class ConsultesComponent implements OnInit {
   }
 
   goToStep6() {
-    this.formStep = 6;
+    this.formMotivo.motivoControl.get('motivos').setValue(this.formMotivo.motivos[4]);
+    this.goToStepMotivo();
   }
 
   goToStepMotivo() {
     this.formStep = this.formMotivo.motivoControl.get('motivos').value.step;
+    console.log(this.formStep);
     if (this.formStep === 5) {
       this.formPerduda.perdudaControl.get('email').setValue(this.userEmail);
-    } else if(this.formStep === 6) {
+    } else if (this.formStep === 6) {
       this.formUltimsAnys.formContactTelEmail.contactTelEmailControl.get('email').setValue(this.userEmail);
       this.formUltimsAnys.formContactTelEmail.contactTelEmailControl.get('phone').setValue(this.userPhone);
+    } else if (this.formStep === 8) {
+      this.formAntecedents.initializeVariables();
     }
   }
 

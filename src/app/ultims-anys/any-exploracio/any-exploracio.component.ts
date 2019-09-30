@@ -16,8 +16,8 @@ export class AnyExploracioComponent implements OnInit {
   rangeYears = [];
 
   constructor(private formBuilder: FormBuilder) {
-    // We initialize the range of years from 1990 to 2019
-    this.rangeYears = this.range(1990, 2019);
+    // We initialize the range of years from 1990 to current year
+    this.rangeYears = this.range(1990, new Date().getFullYear());
   }
 
   ngOnInit() {

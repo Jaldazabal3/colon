@@ -8,19 +8,19 @@
                 (submittedAnyExploracio)="computeLastColono()"
         ></app-any-exploracio>
     </div>
-    <div [hidden]="tempsUltimaColono<5 || seguimentProgramat!=-1">
+    <div [hidden]="tempsUltimaColono>=5 || tempsUltimaColono == -1 || seguimentProgramat!=-1">
         <app-menor-que-cinc
                 (gonePrevious)="goChooseYear()"
                 (submittedMenorCinc)="computeSeguimentProgramat()"
         ></app-menor-que-cinc>
     </div>
-    <div [hidden]="tempsUltimaColono<5 || seguimentProgramat!=1">
+    <div [hidden]="tempsUltimaColono>=5 || tempsUltimaColono == -1 || seguimentProgramat!=1">
         <app-info-exploracio
                 (gonePrevious)="goSeguimentProgramat()"
                 (submittedInfoExplor)="goContactTelEmail()"
         ></app-info-exploracio>
     </div>
-    <div [hidden]="tempsUltimaColono<5 || seguimentProgramat!=2">
+    <div [hidden]="tempsUltimaColono>=5 || tempsUltimaColono == -1 || seguimentProgramat!=2">
         <app-contact-tel-email
                 (gonePrevious)="goInfoExplor()"
                 (emailContactChange)="this.emailContactChange.emit($event)"

@@ -7,3 +7,6 @@
 h4{
     font-weight: bold;
 }
+.contacte > ul > li > a {
+    color: #007bff;
+}
