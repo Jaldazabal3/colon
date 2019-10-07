@@ -35,6 +35,7 @@ export class ConsultesComponent implements OnInit {
     4- No he rebut la carta (requadre)
     5- He perdut la carta || he perdut la carta del resultat
     6- Tinc realitzada una colonoscòpia als últims 5 anys || Diagnosticat amb pòlips o adenomes
+    // tslint:disable-next-line:max-line-length
     7- Estic diagnosticat de colitis ulcerosa o malaltia de Crohn | Estic diagnosticat de càncer de còlon i/o recte | Estic diagnosticat de Poliposi
     8- Tinc antecedents familiars de càncer de còlon i/o recte
     9- Altres
@@ -114,7 +115,8 @@ export class ConsultesComponent implements OnInit {
     this.userPhone = phone;
   }
 
-  private validateData() {
+  private submitData() {
+    // TODO: call the service and the method to submit the data from the forms
     return true;
   }
 }

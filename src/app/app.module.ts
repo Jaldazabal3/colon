@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -19,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { IdentificativeDataComponent } from './identificative-data/identificative-data.component';
 import { MotivoComponent } from './motivo/motivo.component';
 import { DifferentAddressComponent } from './different-address/different-address.component';
-import {MunicipiComponent} from './municipi/municipi.component';
+import { MunicipiComponent } from './municipi/municipi.component';
 import { PerdudaComponent } from './perduda/perduda.component';
 import { NoRebudaComponent } from './no-rebuda/no-rebuda.component';
 import { ResultatsPerdutsComponent } from './resultats-perduts/resultats-perduts.component';
@@ -74,7 +75,8 @@ import { MotiuAltresComponent } from './motiu-altres/motiu-altres.component';
     NgbModule,
     MatFormFieldModule,
     MatInputModule,
-    NgSelectModule
+    NgSelectModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
