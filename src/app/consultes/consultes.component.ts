@@ -6,6 +6,7 @@ import { PerdudaComponent } from '../perduda/perduda.component';
 import {UltimsAnysComponent} from '../ultims-anys/ultims-anys.component';
 import {ContactTelEmailComponent} from '../contact-tel-email/contact-tel-email.component';
 import {AntecedentsFamiliarsComponent} from '../antecedents-familiars/antecedents-familiars.component';
+import {ApiService} from '../api.service';
 
 
 @Component({
@@ -22,6 +23,8 @@ export class ConsultesComponent implements OnInit {
   @ViewChild(PerdudaComponent) formPerduda: PerdudaComponent;
   @ViewChild(UltimsAnysComponent) formUltimsAnys: UltimsAnysComponent;
   @ViewChild(AntecedentsFamiliarsComponent) formAntecedents: AntecedentsFamiliarsComponent;
+
+  sendFormService: ApiService;
 
   userEmail = '';
   userPhone = '';
@@ -116,7 +119,15 @@ export class ConsultesComponent implements OnInit {
   }
 
   private submitData() {
-    // TODO: call the service and the method to submit the data from the forms
+    this.sendFormService.sendForm(
+      this.formMunicipi,
+      this.formIdentificationData,
+      this.formMotivo,
+      this.formPerduda,
+      this.formUltimsAnys,
+      this.formAntecedents
+    );
+    // TODO: handle response from server and perform the desired action
     return true;
   }
 }
