@@ -16,16 +16,18 @@ export class ColonFormData {
   motiuUltimaExploracio: string;
   // fitxersColono = [];
   resultatColono: string;
+  methodRecieve: string;
   // Malaltia Crohn
   anyDiagnostic: string;
   centreDiagnostic: string;
   // Antecedents familiars
-  antecedentsFamiliars: boolean;
-  colonoRealitzada: boolean;
-  antecedentsRisc: boolean;
+  antecedentsFamiliars: string;
+  colonoRealitzada: string;
+  antecedentsRisc: string;
+  controlsColono: string;
   altresMotius: string;
 
-  constructor(municipi: string, nom: string, cognoms: string, cip: string, nccr: string, email: string, phone: string, motiu: string, mediaRecieved: string, anyExploracio: string, seguimentProgramat: string, centre: string, motiuUltimaExploracio: string, resultatColono: string, anyDiagnostic: string, centreDiagnostic: string, antecedentsFamiliars: boolean, colonoRealitzada: boolean, antecedentsRisc: boolean, altresMotius: string) {
+  constructor(municipi: string, nom: string, cognoms: string, cip: string, nccr: string, email: string, phone: string, motiu: string, mediaRecieved: string, anyExploracio: string, seguimentProgramat: string, centre: string, motiuUltimaExploracio: string, resultatColono: string, methodRecieve:string, anyDiagnostic: string, centreDiagnostic: string, antecedentsFamiliars: string, colonoRealitzada: string, antecedentsRisc: string, controlsColono: string, altresMotius: string) {
     this.municipi = municipi;
     this.nom = nom;
     this.cognoms = cognoms;
@@ -40,11 +42,13 @@ export class ColonFormData {
     this.centre = centre;
     this.motiuUltimaExploracio = motiuUltimaExploracio;
     this.resultatColono = resultatColono;
+    this.methodRecieve = methodRecieve;
     this.anyDiagnostic = anyDiagnostic;
     this.centreDiagnostic = centreDiagnostic;
     this.antecedentsFamiliars = antecedentsFamiliars;
     this.colonoRealitzada = colonoRealitzada;
     this.antecedentsRisc = antecedentsRisc;
+    this.controlsColono = controlsColono;
     this.altresMotius = altresMotius;
   }
 }

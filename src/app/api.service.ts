@@ -20,7 +20,7 @@ export class ApiService {
 
   targetUrl = `http://localhost:8080/consulta`;
 
-  private createFormObject(formMunicipi, formIdentificationData, formMotivo, formPerduda, formUltimsAnys, formAntecedents) {
+  private createFormObject(formMunicipi, formIdentificationData, formMotivo, formPerduda, formUltimsAnys, formUlcerosaCrohn, formAntecedents, formAltresMotius) {
     return new ColonFormData(
       formMunicipi.municipiControl.get('municipi').value,
       formIdentificationData.idDataControl.get('name').value,
@@ -31,10 +31,19 @@ export class ApiService {
       formIdentificationData.idDataControl.get('phone').value,
       formMotivo.motivoControl.get('motivos').value.text,
       formPerduda.perdudaControl.get('mediaRecieved').value,
-      formPerduda.perdudaControl.get('email').value,
       formUltimsAnys.formAnyExploracio.anyExploracioControl.get('anyExploracio').value,
       formUltimsAnys.formMenorQueCinc.menorQueCincControl.get('seguimentProgramat').value,
-
+      formUltimsAnys.formInfoExplor.infoExploracioControl.get('centreSanitari').value,
+      formUltimsAnys.formInfoExplor.infoExploracioControl.get('motiu').value,
+      formUltimsAnys.formInfoExplor.infoExploracioControl.get('resultatColono').value,
+      formUltimsAnys.formContactTelEmail.contactTelEmailControl.get('methodRecieve').value,
+      formUlcerosaCrohn.ulcerosaCrohnControl.get('diagnosiDate').value,
+      formUlcerosaCrohn.ulcerosaCrohnControl.get('centreSanitari').value,
+      formAntecedents.antecedentsFamiliars,
+      formAntecedents.colonoRealitzada,
+      formAntecedents.tipusAntecedents,
+      formAntecedents.controlsColono,
+      formAltresMotius.altresControl.get('motiuText').value
     );
   }
 
@@ -52,15 +61,27 @@ export class ApiService {
     );
   }
 
-  sendForm(formMunicipi, formIdentificationData, formMotivo, formPerduda, formUltimsAnys, formAntecedents) {
+  sendForm(formMunicipi, formIdentificationData, formMotivo, formPerduda, formUltimsAnys, formUlcerosaCrohn, formAntecedents, formAltresMotius) {
     // Returning Observable of FormResponse interface
     return this.http.post<FormResponse>(
       this.targetUrl,
-      this.createFormObject(formMunicipi, formIdentificationData, formMotivo, formPerduda, formUltimsAnys, formAntecedents),
+      this.createFormObject(
+        formMunicipi,
+        formIdentificationData,
+        formMotivo,
+        formPerduda,
+        formUltimsAnys,
+        formUlcerosaCrohn,
+        formAntecedents,
+        formAltresMotius
+      ),
       httpOptions
     )
       .pipe(
         catchError(this.handleError)
+      )
+      .subscribe(
+        data => console.log(data)
       );
   }
 }

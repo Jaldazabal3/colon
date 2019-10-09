@@ -28,7 +28,7 @@ export class PerdudaComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {  }
 
   private finalSubmit() {
-    console.log('Submit to email');
+    this.submittedPerduda.emit();
   }
 
   private goPreviousStep() {

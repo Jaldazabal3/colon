@@ -7,6 +7,8 @@ import {UltimsAnysComponent} from '../ultims-anys/ultims-anys.component';
 import {ContactTelEmailComponent} from '../contact-tel-email/contact-tel-email.component';
 import {AntecedentsFamiliarsComponent} from '../antecedents-familiars/antecedents-familiars.component';
 import {ApiService} from '../api.service';
+import {UlcerosaCrohnComponent} from '../ulcerosa-crohn/ulcerosa-crohn.component';
+import {MotiuAltresComponent} from '../motiu-altres/motiu-altres.component';
 
 
 @Component({
@@ -22,9 +24,9 @@ export class ConsultesComponent implements OnInit {
   @ViewChild(MotivoComponent) formMotivo: MotivoComponent;
   @ViewChild(PerdudaComponent) formPerduda: PerdudaComponent;
   @ViewChild(UltimsAnysComponent) formUltimsAnys: UltimsAnysComponent;
+  @ViewChild(UlcerosaCrohnComponent) formUlcerosaCrohn: UlcerosaCrohnComponent;
   @ViewChild(AntecedentsFamiliarsComponent) formAntecedents: AntecedentsFamiliarsComponent;
-
-  sendFormService: ApiService;
+  @ViewChild(MotiuAltresComponent) formAltresMotius: MotiuAltresComponent;
 
   userEmail = '';
   userPhone = '';
@@ -47,7 +49,7 @@ export class ConsultesComponent implements OnInit {
 
   formStep: number;
 
-  constructor() {
+  constructor(private sendFormService: ApiService) {
     this.formStep = 0;
   }
 
@@ -125,7 +127,9 @@ export class ConsultesComponent implements OnInit {
       this.formMotivo,
       this.formPerduda,
       this.formUltimsAnys,
-      this.formAntecedents
+      this.formUlcerosaCrohn,
+      this.formAntecedents,
+      this.formAltresMotius
     );
     // TODO: handle response from server and perform the desired action
     return true;
