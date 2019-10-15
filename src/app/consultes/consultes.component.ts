@@ -129,7 +129,9 @@ export class ConsultesComponent implements OnInit {
       this.formUltimsAnys,
       this.formUlcerosaCrohn,
       this.formAntecedents,
-      this.formAltresMotius
+      this.formAltresMotius,
+      this.userEmail,
+      this.userPhone
     );
     // TODO: handle response from server and perform the desired action
     return true;

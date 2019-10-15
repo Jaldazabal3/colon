@@ -20,15 +20,25 @@ export class ApiService {
 
   targetUrl = `http://localhost:8080/consulta`;
 
-  private createFormObject(formMunicipi, formIdentificationData, formMotivo, formPerduda, formUltimsAnys, formUlcerosaCrohn, formAntecedents, formAltresMotius) {
+  private createFormObject(formMunicipi,
+                           formIdentificationData,
+                           formMotivo,
+                           formPerduda,
+                           formUltimsAnys,
+                           formUlcerosaCrohn,
+                           formAntecedents,
+                           formAltresMotius,
+                           userEmail,
+                           userPhone
+  ) {
     return new ColonFormData(
       formMunicipi.municipiControl.get('municipi').value,
       formIdentificationData.idDataControl.get('name').value,
       formIdentificationData.idDataControl.get('surname').value,
       formIdentificationData.idDataControl.get('cip').value,
       formIdentificationData.idDataControl.get('nccr').value,
-      formIdentificationData.idDataControl.get('email').value,
-      formIdentificationData.idDataControl.get('phone').value,
+      userEmail,
+      userPhone,
       formMotivo.motivoControl.get('motivos').value.text,
       formPerduda.perdudaControl.get('mediaRecieved').value,
       formUltimsAnys.formAnyExploracio.anyExploracioControl.get('anyExploracio').value,
@@ -61,7 +71,16 @@ export class ApiService {
     );
   }
 
-  sendForm(formMunicipi, formIdentificationData, formMotivo, formPerduda, formUltimsAnys, formUlcerosaCrohn, formAntecedents, formAltresMotius) {
+  sendForm(formMunicipi,
+           formIdentificationData,
+           formMotivo,
+           formPerduda,
+           formUltimsAnys,
+           formUlcerosaCrohn,
+           formAntecedents,
+           formAltresMotius,
+           userEmail,
+           userPhone) {
     // Returning Observable of FormResponse interface
     return this.http.post<FormResponse>(
       this.targetUrl,
@@ -73,13 +92,12 @@ export class ApiService {
         formUltimsAnys,
         formUlcerosaCrohn,
         formAntecedents,
-        formAltresMotius
+        formAltresMotius,
+        userEmail,
+        userPhone
       ),
       httpOptions
     )
-      .pipe(
-        catchError(this.handleError)
-      )
       .subscribe(
         data => console.log(data)
       );
