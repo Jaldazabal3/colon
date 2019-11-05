@@ -17,6 +17,9 @@ export class InfoExploracioComponent implements OnInit {
     fileColono: [null],
     resultatColono: ['', Validators.required]
   });
+
+  fileToUpload: File = null;
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -28,6 +31,13 @@ export class InfoExploracioComponent implements OnInit {
 
   private submitInfoExplor() {
     this.submittedInfoExplor.emit();
+  }
+
+  handleFileInput(files: FileList) {
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0 ; i < files.length ;  i++) {
+      this.fileToUpload = files.item(i);
+    }
   }
 
 }
