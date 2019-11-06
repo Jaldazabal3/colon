@@ -32,25 +32,25 @@ export class ConsultesComponent implements OnInit {
   userPhone = '';
 
 
-  /* Form steps will be:
-    0- Municipi
-    1- Dades identificatives
-    2- Motiu
-    3- He rebut la carta a una altra adreça (requadre)
-    4- No he rebut la carta (requadre)
-    5- He perdut la carta || he perdut la carta del resultat
-    6- Tinc realitzada una colonoscòpia als últims 5 anys || Diagnosticat amb pòlips o adenomes
-    // tslint:disable-next-line:max-line-length
-    7- Estic diagnosticat de colitis ulcerosa o malaltia de Crohn | Estic diagnosticat de càncer de còlon i/o recte | Estic diagnosticat de Poliposi
-    8- Tinc antecedents familiars de càncer de còlon i/o recte
-    9- Altres
-    10- (LAST?) Missatge final que no permeti tornar enrere
+  /** Form steps will be:
+   * 0- Municipi
+   * 1- Dades identificatives
+   * 2- Motiu
+   * 3- He rebut la carta a una altra adreça (requadre)
+   * 4- No he rebut la carta (requadre)
+   * 5- He perdut la carta || he perdut la carta del resultat
+   * 6- Tinc realitzada una colonoscòpia als últims 5 anys || Diagnosticat amb pòlips o adenomes
+   * 7- Diagnosticat de colitis ulcerosa o malaltia de Crohn | Diagnosticat de càncer de còlon i/o recte | Estic diagnosticat de Poliposi
+   * 8- Tinc antecedents familiars de càncer de còlon i/o recte
+   * 9- Altres
+   * 10- (LAST?) Missatge final que no permeti tornar enrere
    */
 
   formStep: number;
 
   constructor(private sendFormService: ApiService) {
-    this.formStep = 0;
+    // this.formStep = 0;
+    this.formStep = 6;
   }
 
   goToStep2() {
@@ -74,7 +74,7 @@ export class ConsultesComponent implements OnInit {
 
   goToStepMotivo() {
     this.formStep = this.formMotivo.motivoControl.get('motivos').value.step;
-    console.log(this.formStep);
+    // console.log(this.formStep);
     if (this.formStep === 5) {
       this.formPerduda.perdudaControl.get('email').setValue(this.userEmail);
     } else if (this.formStep === 6) {
@@ -97,7 +97,7 @@ export class ConsultesComponent implements OnInit {
    */
   logData() {
     // console.log(this.formIdentificationData.idDataControl.get('email').value);
-    console.log(this.userEmail);
+    // console.log(this.userEmail);
   }
 
   private setUserEmailFromID(email) {

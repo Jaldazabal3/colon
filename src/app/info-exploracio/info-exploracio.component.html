@@ -15,7 +15,20 @@
     <label>
       Si disposa de l'informe de la colonoscòpia i anatomia patològica adjunti'ls:
     </label>
-    <input type="file" class="form-control-file" formControlName="fileColono" multiple/>
+    <div class="form-control-file">
+      <input type="file" (change)="handleFileInput($event)" id="file-colonoprevia"/>
+      <label for="file-colonoprevia" class="w3-button w3-round w3-border w3-border-black">
+        Afegeix fitxer
+      </label>
+    </div>
+    <div>
+      <ul class="w3-ul w3-border">
+        <li *ngFor="let singleFile of this.filesToUpload" class="w3-display-container">
+          {{singleFile.name}}
+          <span (click)="removeFile(singleFile)" class="w3-button w3-display-right">&times;</span>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="w3-row-padding w3-margin-top">
     <label>
@@ -28,8 +41,8 @@
       <button type="button" class="w3-button w3-round w3-border w3-border-red w3-margin-right" (click)="goPreviousStep()">
         <i class="fas fa-arrow-alt-circle-left"></i> Enrere
       </button>
-      <button type="submit" class="w3-button w3-round w3-border w3-border w3-border-green" [disabled]="!infoExploracioControl.valid">
-        Següent <i class="fas fa-arrow-alt-circle-right"></i>
+      <button type="submit" class="w3-button w3-round w3-border w3-border-green" [disabled]="!infoExploracioControl.valid">
+        Envia
       </button>
     </div>
   </div>

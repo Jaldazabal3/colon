@@ -18,7 +18,7 @@ export class InfoExploracioComponent implements OnInit {
     resultatColono: ['', Validators.required]
   });
 
-  fileToUpload: File = null;
+  filesToUpload: File[] = [];
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -33,11 +33,20 @@ export class InfoExploracioComponent implements OnInit {
     this.submittedInfoExplor.emit();
   }
 
-  handleFileInput(files: FileList) {
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0 ; i < files.length ;  i++) {
-      this.fileToUpload = files.item(i);
-    }
+  /**
+   * Adds file to file array to upload
+   * @param event contains the change event with the file uploaded inside
+   */
+  handleFileInput(event) {
+    this.filesToUpload.push(event.target.files[0]);
+  }
+
+  /**
+   * Removes the file passed by parameter from the file array
+   * @param singleFile file to remove
+   */
+  removeFile(singleFile) {
+    // TODO: implement method to remove the file clicked
   }
 
 }

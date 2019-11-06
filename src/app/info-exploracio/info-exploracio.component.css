@@ -1,0 +1,23 @@
+#file-colonoprevia{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+/*#file-colonoprevia + label {*/
+/*    color: white;*/
+/*    background-color: #17a2b8;*/
+/*    display: inline-block;*/
+/*    cursor: pointer;*/
+/*    margin-top: .25rem;*/
+/*    padding: .375rem .75rem;*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*}*/
+
+/*#file-colonoprevia + label:hover {*/
+
+/*}*/
