@@ -14,7 +14,7 @@ export class ColonFormData {
   seguimentProgramat: string;
   centre: string;
   motiuUltimaExploracio: string;
-  // fitxersColono = [];
+  fitxersColono = [];
   resultatColono: string;
   methodRecieve: string;
   // Malaltia Crohn
@@ -27,7 +27,7 @@ export class ColonFormData {
   controlsColono: string;
   altresMotius: string;
 
-  constructor(municipi: string, nom: string, cognoms: string, cip: string, nccr: string, email: string, phone: string, motiu: string, mediaRecieved: string, anyExploracio: string, seguimentProgramat: string, centre: string, motiuUltimaExploracio: string, resultatColono: string, methodRecieve:string, anyDiagnostic: string, centreDiagnostic: string, antecedentsFamiliars: string, colonoRealitzada: string, antecedentsRisc: string, controlsColono: string, altresMotius: string) {
+  constructor(municipi: string, nom: string, cognoms: string, cip: string, nccr: string, email: string, phone: string, motiu: string, mediaRecieved: string, anyExploracio: string, seguimentProgramat: string, centre: string, motiuUltimaExploracio: string, fitxersColono, resultatColono: string, methodRecieve:string, anyDiagnostic: string, centreDiagnostic: string, antecedentsFamiliars: string, colonoRealitzada: string, antecedentsRisc: string, controlsColono: string, altresMotius: string) {
     this.municipi = municipi;
     this.nom = nom;
     this.cognoms = cognoms;
@@ -41,6 +41,7 @@ export class ColonFormData {
     this.seguimentProgramat = seguimentProgramat;
     this.centre = centre;
     this.motiuUltimaExploracio = motiuUltimaExploracio;
+    this.fitxersColono = fitxersColono;
     this.resultatColono = resultatColono;
     this.methodRecieve = methodRecieve;
     this.anyDiagnostic = anyDiagnostic;

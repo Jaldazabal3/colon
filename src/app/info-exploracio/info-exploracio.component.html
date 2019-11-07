@@ -22,7 +22,7 @@
       </label>
     </div>
     <div>
-      <ul class="w3-ul w3-border">
+      <ul *ngIf="this.filesToUpload.length > 0" class="w3-ul w3-border">
         <li *ngFor="let singleFile of this.filesToUpload" class="w3-display-container">
           {{singleFile.name}}
           <span (click)="removeFile(singleFile)" class="w3-button w3-display-right">&times;</span>

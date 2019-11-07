@@ -26,8 +26,8 @@ export class UltimsAnysComponent implements OnInit {
   // Seguiment programat: -1 no es mostra res, 0 no, 1 pas info exploracio, 2 form tel/email
 
   constructor() {
-    this.tempsUltimaColono = 2;
-    this.seguimentProgramat = 1;
+    this.tempsUltimaColono = -1;
+    this.seguimentProgramat = -1;
   }
 
   ngOnInit() {
@@ -73,4 +73,5 @@ export class UltimsAnysComponent implements OnInit {
   private goInfoExplor() {
     this.seguimentProgramat = 1;
   }
+
 }

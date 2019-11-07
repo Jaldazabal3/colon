@@ -49,8 +49,7 @@ export class ConsultesComponent implements OnInit {
   formStep: number;
 
   constructor(private sendFormService: ApiService) {
-    // this.formStep = 0;
-    this.formStep = 6;
+    this.formStep = 0;
   }
 
   goToStep2() {

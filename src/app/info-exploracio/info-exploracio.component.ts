@@ -14,7 +14,7 @@ export class InfoExploracioComponent implements OnInit {
   infoExploracioControl = this.formBuilder.group({
     centreSanitari: ['', Validators.required],
     motiu: ['', Validators.required],
-    fileColono: [null],
+    filesColono: [null],
     resultatColono: ['', Validators.required]
   });
 
@@ -30,6 +30,7 @@ export class InfoExploracioComponent implements OnInit {
   }
 
   private submitInfoExplor() {
+    this.infoExploracioControl.get('filesColono').setValue(this.filesToUpload);
     this.submittedInfoExplor.emit();
   }
 
@@ -38,7 +39,9 @@ export class InfoExploracioComponent implements OnInit {
    * @param event contains the change event with the file uploaded inside
    */
   handleFileInput(event) {
-    this.filesToUpload.push(event.target.files[0]);
+    if (event.target.files[0] !== undefined) {
+      this.filesToUpload.push(event.target.files[0]);
+    }
   }
 
   /**
@@ -46,7 +49,7 @@ export class InfoExploracioComponent implements OnInit {
    * @param singleFile file to remove
    */
   removeFile(singleFile) {
-    // TODO: implement method to remove the file clicked
+    this.filesToUpload.splice(this.filesToUpload.indexOf(singleFile), 1);
   }
 
 }

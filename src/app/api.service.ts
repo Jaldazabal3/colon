@@ -45,6 +45,7 @@ export class ApiService {
       formUltimsAnys.formMenorQueCinc.menorQueCincControl.get('seguimentProgramat').value,
       formUltimsAnys.formInfoExplor.infoExploracioControl.get('centreSanitari').value,
       formUltimsAnys.formInfoExplor.infoExploracioControl.get('motiu').value,
+      formUltimsAnys.formInfoExplor.infoExploracioControl.get('filesColono').value,
       formUltimsAnys.formInfoExplor.infoExploracioControl.get('resultatColono').value,
       formUltimsAnys.formContactTelEmail.contactTelEmailControl.get('methodRecieve').value,
       formUlcerosaCrohn.ulcerosaCrohnControl.get('diagnosiDate').value,
