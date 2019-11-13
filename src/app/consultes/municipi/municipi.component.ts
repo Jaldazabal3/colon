@@ -1,6 +1,6 @@
 import {Component, OnInit, Output, EventEmitter, ViewChild} from '@angular/core';
 import {Validators, FormBuilder, FormArray} from '@angular/forms';
-import { MUNICIPIS } from '../list-municipis';
+import { MUNICIPIS } from './list-municipis';
 
 @Component({
   selector: 'app-municipi',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { MOTIVOS } from '../list-motivos';
+import { MOTIVOS } from './list-motivos';
 import { Validators, FormBuilder } from '@angular/forms';
 
 

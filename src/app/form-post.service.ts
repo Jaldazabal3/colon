@@ -14,12 +14,25 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class FormPostService {
 
   constructor(private http: HttpClient) { }
 
   targetUrl = `http://localhost:8080/consulta`;
 
+  /**
+   * Creates form object to be passed inside a request
+   * @param formMunicipi data from municipi form
+   * @param formIdentificationData data from identificative data form
+   * @param formMotivo data from reason form
+   * @param formPerduda data from lost letter form
+   * @param formUltimsAnys data from colono in last years form
+   * @param formUlcerosaCrohn data from illness form
+   * @param formAntecedents data from family past problems form
+   * @param formAltresMotius data from other reasons form
+   * @param userEmail email given by the user
+   * @param userPhone phone given by the user
+   */
   private createFormObject(formMunicipi,
                            formIdentificationData,
                            formMotivo,
@@ -83,6 +96,7 @@ export class ApiService {
            userEmail,
            userPhone) {
     // Returning Observable of FormResponse interface
+    // http.post(URL, dataObject, httpOption) --> HttpClient post method
     return this.http.post<FormResponse>(
       this.targetUrl,
       this.createFormObject(

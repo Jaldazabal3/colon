@@ -1,15 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IdentificativeDataComponent } from '../identificative-data/identificative-data.component';
-import { MotivoComponent } from '../motivo/motivo.component';
-import { MunicipiComponent } from '../municipi/municipi.component';
-import { PerdudaComponent } from '../perduda/perduda.component';
-import {UltimsAnysComponent} from '../ultims-anys/ultims-anys.component';
-import {ContactTelEmailComponent} from '../contact-tel-email/contact-tel-email.component';
-import {AntecedentsFamiliarsComponent} from '../antecedents-familiars/antecedents-familiars.component';
-import {ApiService} from '../api.service';
-import {UlcerosaCrohnComponent} from '../ulcerosa-crohn/ulcerosa-crohn.component';
-import {MotiuAltresComponent} from '../motiu-altres/motiu-altres.component';
-
+import { IdentificativeDataComponent } from './identificative-data/identificative-data.component';
+import { MotivoComponent } from './motivo/motivo.component';
+import { MunicipiComponent } from './municipi/municipi.component';
+import { PerdudaComponent } from './perduda/perduda.component';
+import {UltimsAnysComponent} from './ultims-anys/ultims-anys.component';
+import {AntecedentsFamiliarsComponent} from './antecedents-familiars/antecedents-familiars.component';
+import {FormPostService} from '../form-post.service';
+import {UlcerosaCrohnComponent} from './ulcerosa-crohn/ulcerosa-crohn.component';
+import {MotiuAltresComponent} from './motiu-altres/motiu-altres.component';
 
 @Component({
   selector: 'app-consultes',
@@ -48,7 +46,7 @@ export class ConsultesComponent implements OnInit {
 
   formStep: number;
 
-  constructor(private sendFormService: ApiService) {
+  constructor(private sendFormService: FormPostService) {
     this.formStep = 0;
   }
 
@@ -120,6 +118,12 @@ export class ConsultesComponent implements OnInit {
   }
 
   private submitData() {
+    // TODO: Upload possible attached files
+    for (let informeColono of this.formUltimsAnys.formInfoExplor.filesToUpload) {
+
+    }
+
+    // Calling form service to send the form data entered by the user to the server.
     this.sendFormService.sendForm(
       this.formMunicipi,
       this.formIdentificationData,

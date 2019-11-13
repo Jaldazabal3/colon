@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { AnyExploracioComponent } from './any-exploracio/any-exploracio.component';
 import {MenorQueCincComponent} from './menor-que-cinc/menor-que-cinc.component';
-import {InfoExploracioComponent} from '../info-exploracio/info-exploracio.component';
-import {ContactTelEmailComponent} from '../contact-tel-email/contact-tel-email.component';
+import {InfoExploracioComponent} from './info-exploracio/info-exploracio.component';
+import {ContactTelEmailComponent} from '../shared/contact-tel-email/contact-tel-email.component';
 
 @Component({
   selector: 'app-ultims-anys',

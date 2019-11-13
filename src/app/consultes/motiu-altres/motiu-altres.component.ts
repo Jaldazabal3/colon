@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {ContactTelEmailComponent} from '../contact-tel-email/contact-tel-email.component';
+import {ContactTelEmailComponent} from '../shared/contact-tel-email/contact-tel-email.component';
 
 @Component({
   selector: 'app-motiu-altres',
