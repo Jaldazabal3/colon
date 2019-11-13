@@ -5,7 +5,7 @@ import { MunicipiComponent } from './municipi/municipi.component';
 import { PerdudaComponent } from './perduda/perduda.component';
 import {UltimsAnysComponent} from './ultims-anys/ultims-anys.component';
 import {AntecedentsFamiliarsComponent} from './antecedents-familiars/antecedents-familiars.component';
-import {FormPostService} from '../form-post.service';
+import {FormPostService} from './services/form-post.service';
 import {UlcerosaCrohnComponent} from './ulcerosa-crohn/ulcerosa-crohn.component';
 import {MotiuAltresComponent} from './motiu-altres/motiu-altres.component';
 

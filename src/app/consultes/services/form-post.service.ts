@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {FormResponse} from './form-response';
+import {FormResponse} from '../models/form-response';
 import {catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
-import { ColonFormData } from './colon-form-data';
+import { ColonFormData } from '../models/colon-form-data';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,6 +20,7 @@ export class FormPostService {
 
   targetUrl = `http://localhost:8080/consulta`;
 
+  // TODO: form object creation cannot be here, separation of concerns
   /**
    * Creates form object to be passed inside a request
    * @param formMunicipi data from municipi form

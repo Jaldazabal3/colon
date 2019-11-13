@@ -27,6 +27,7 @@ export class ColonFormData {
   controlsColono: string;
   altresMotius: string;
 
+  // TODO: change the constructor to allow passing forms and actually puttin the logic of setting all attributes here
   constructor(municipi: string, nom: string, cognoms: string, cip: string, nccr: string, email: string, phone: string, motiu: string, mediaRecieved: string, anyExploracio: string, seguimentProgramat: string, centre: string, motiuUltimaExploracio: string, fitxersColono, resultatColono: string, methodRecieve:string, anyDiagnostic: string, centreDiagnostic: string, antecedentsFamiliars: string, colonoRealitzada: string, antecedentsRisc: string, controlsColono: string, altresMotius: string) {
     this.municipi = municipi;
     this.nom = nom;
