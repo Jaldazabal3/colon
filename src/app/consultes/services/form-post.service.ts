@@ -20,7 +20,6 @@ export class FormPostService {
 
   targetUrl = `http://localhost:8080/consulta`;
 
-  // TODO: form object creation cannot be here, separation of concerns
   /**
    * Creates form object to be passed inside a request
    * @param formMunicipi data from municipi form
@@ -45,31 +44,20 @@ export class FormPostService {
                            userEmail,
                            userPhone
   ) {
-    return new ColonFormData(
-      formMunicipi.municipiControl.get('municipi').value,
-      formIdentificationData.idDataControl.get('name').value,
-      formIdentificationData.idDataControl.get('surname').value,
-      formIdentificationData.idDataControl.get('cip').value,
-      formIdentificationData.idDataControl.get('nccr').value,
+    const formObject = new ColonFormData();
+    formObject.setForm(
+      formMunicipi,
+      formIdentificationData,
+      formMotivo,
+      formPerduda,
+      formUltimsAnys,
+      formUlcerosaCrohn,
+      formAntecedents,
+      formAltresMotius,
       userEmail,
-      userPhone,
-      formMotivo.motivoControl.get('motivos').value.text,
-      formPerduda.perdudaControl.get('mediaRecieved').value,
-      formUltimsAnys.formAnyExploracio.anyExploracioControl.get('anyExploracio').value,
-      formUltimsAnys.formMenorQueCinc.menorQueCincControl.get('seguimentProgramat').value,
-      formUltimsAnys.formInfoExplor.infoExploracioControl.get('centreSanitari').value,
-      formUltimsAnys.formInfoExplor.infoExploracioControl.get('motiu').value,
-      formUltimsAnys.formInfoExplor.infoExploracioControl.get('filesColono').value,
-      formUltimsAnys.formInfoExplor.infoExploracioControl.get('resultatColono').value,
-      formUltimsAnys.formContactTelEmail.contactTelEmailControl.get('methodRecieve').value,
-      formUlcerosaCrohn.ulcerosaCrohnControl.get('diagnosiDate').value,
-      formUlcerosaCrohn.ulcerosaCrohnControl.get('centreSanitari').value,
-      formAntecedents.antecedentsFamiliars,
-      formAntecedents.colonoRealitzada,
-      formAntecedents.tipusAntecedents,
-      formAntecedents.controlsColono,
-      formAltresMotius.altresControl.get('motiuText').value
+      userPhone
     );
+    return formObject;
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -98,6 +86,7 @@ export class FormPostService {
            userPhone) {
     // Returning Observable of FormResponse interface
     // http.post(URL, dataObject, httpOption) --> HttpClient post method
+    // TODO: Use apiservice instead of calling http.post directly here.
     return this.http.post<FormResponse>(
       this.targetUrl,
       this.createFormObject(
