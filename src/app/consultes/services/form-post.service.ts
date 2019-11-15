@@ -4,6 +4,7 @@ import {FormResponse} from '../models/form-response';
 import {catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import { ColonFormData } from '../models/colon-form-data';
+import {ApiService} from './api.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,9 +17,7 @@ const httpOptions = {
 })
 export class FormPostService {
 
-  constructor(private http: HttpClient) { }
-
-  targetUrl = `http://localhost:8080/consulta`;
+  constructor(private apiService: ApiService) { }
 
   /**
    * Creates form object to be passed inside a request
@@ -86,9 +85,8 @@ export class FormPostService {
            userPhone) {
     // Returning Observable of FormResponse interface
     // http.post(URL, dataObject, httpOption) --> HttpClient post method
-    // TODO: Use apiservice instead of calling http.post directly here.
-    return this.http.post<FormResponse>(
-      this.targetUrl,
+    return this.apiService.post(
+      'consulta',
       this.createFormObject(
         formMunicipi,
         formIdentificationData,
