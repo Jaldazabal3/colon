@@ -14,7 +14,6 @@ export class ColonFormData {
   seguimentProgramat: string;
   centre: string;
   motiuUltimaExploracio: string;
-  fitxersColono = [];
   resultatColono: string;
   methodRecieve: string;
   // Malaltia Crohn
@@ -29,7 +28,7 @@ export class ColonFormData {
 
   constructor() { }
 
-  setAll(municipi: string, nom: string, cognoms: string, cip: string, nccr: string, email: string, phone: string, motiu: string, mediaRecieved: string, anyExploracio: string, seguimentProgramat: string, centre: string, motiuUltimaExploracio: string, fitxersColono, resultatColono: string, methodRecieve:string, anyDiagnostic: string, centreDiagnostic: string, antecedentsFamiliars: string, colonoRealitzada: string, antecedentsRisc: string, controlsColono: string, altresMotius: string) {
+  setAll(municipi: string, nom: string, cognoms: string, cip: string, nccr: string, email: string, phone: string, motiu: string, mediaRecieved: string, anyExploracio: string, seguimentProgramat: string, centre: string, motiuUltimaExploracio: string, resultatColono: string, methodRecieve:string, anyDiagnostic: string, centreDiagnostic: string, antecedentsFamiliars: string, colonoRealitzada: string, antecedentsRisc: string, controlsColono: string, altresMotius: string) {
     this.municipi = municipi;
     this.nom = nom;
     this.cognoms = cognoms;
@@ -43,7 +42,6 @@ export class ColonFormData {
     this.seguimentProgramat = seguimentProgramat;
     this.centre = centre;
     this.motiuUltimaExploracio = motiuUltimaExploracio;
-    this.fitxersColono = fitxersColono;
     this.resultatColono = resultatColono;
     this.methodRecieve = methodRecieve;
     this.anyDiagnostic = anyDiagnostic;
@@ -70,7 +68,6 @@ export class ColonFormData {
     this.seguimentProgramat = formUltimsAnys.formMenorQueCinc.menorQueCincControl.get('seguimentProgramat').value;
     this.centre = formUltimsAnys.formInfoExplor.infoExploracioControl.get('centreSanitari').value;
     this.motiuUltimaExploracio = formUltimsAnys.formInfoExplor.infoExploracioControl.get('motiu').value;
-    this.fitxersColono = formUltimsAnys.formInfoExplor.infoExploracioControl.get('filesColono').value;
     this.resultatColono = formUltimsAnys.formInfoExplor.infoExploracioControl.get('resultatColono').value;
     this.methodRecieve = formUltimsAnys.formContactTelEmail.contactTelEmailControl.get('methodRecieve').value;
     this.anyDiagnostic = formUlcerosaCrohn.ulcerosaCrohnControl.get('diagnosiDate').value;

@@ -29,6 +29,8 @@ export class ConsultesComponent implements OnInit {
   userEmail = '';
   userPhone = '';
 
+  targetUpdate = '';
+
 
   /** Form steps will be:
    * 0- Municipi
@@ -48,6 +50,8 @@ export class ConsultesComponent implements OnInit {
 
   constructor(private sendFormService: FormPostService) {
     this.formStep = 0;
+    this.targetUpdate = Math.random().toString(36).slice(2);
+    console.log(this.targetUpdate);
   }
 
   goToStep2() {
