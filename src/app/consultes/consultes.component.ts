@@ -8,6 +8,8 @@ import {AntecedentsFamiliarsComponent} from './antecedents-familiars/antecedents
 import {FormPostService} from './services/form-post.service';
 import {UlcerosaCrohnComponent} from './ulcerosa-crohn/ulcerosa-crohn.component';
 import {MotiuAltresComponent} from './motiu-altres/motiu-altres.component';
+import {FileColono} from './models/file-colono';
+import {UploadService} from './services/upload.service';
 
 @Component({
   selector: 'app-consultes',
@@ -48,7 +50,7 @@ export class ConsultesComponent implements OnInit {
 
   formStep: number;
 
-  constructor(private sendFormService: FormPostService) {
+  constructor(private sendFormService: FormPostService, private uploadService: UploadService) {
     this.formStep = 0;
     this.targetUpdate = Math.random().toString(36).slice(2);
     console.log(this.targetUpdate);
@@ -94,7 +96,7 @@ export class ConsultesComponent implements OnInit {
   }
 
   /**
-   * Function only for testing purposes. Checking how to access variables inside children components
+   * Function only for debugging purposes. Checking how to access variables inside children components
    */
   logData() {
     // console.log(this.formIdentificationData.idDataControl.get('email').value);
@@ -123,8 +125,14 @@ export class ConsultesComponent implements OnInit {
 
   private submitData() {
     // TODO: Upload possible attached files
-    for (let informeColono of this.formUltimsAnys.formInfoExplor.filesToUpload) {
-
+    const fileColono = new FileColono();
+    fileColono.fitxersColono = this.formUltimsAnys.formInfoExplor.filesToUpload;
+    for (const informeColono of fileColono.fitxersColono) {
+      const uploadSuccessfully = this.uploadService.postFile(fileColono.folderName, informeColono).subscribe((success) => success);
+      if (!uploadSuccessfully) {
+        console.log('An error occurred uploading the file');
+        break;
+      }
     }
 
     // Calling form service to send the form data entered by the user to the server.
