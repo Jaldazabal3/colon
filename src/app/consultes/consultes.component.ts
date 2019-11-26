@@ -31,7 +31,6 @@ export class ConsultesComponent implements OnInit {
   userEmail = '';
   userPhone = '';
 
-  targetUpdate = '';
 
 
   /** Form steps will be:
@@ -52,8 +51,6 @@ export class ConsultesComponent implements OnInit {
 
   constructor(private sendFormService: FormPostService, private uploadService: UploadService) {
     this.formStep = 0;
-    this.targetUpdate = Math.random().toString(36).slice(2);
-    console.log(this.targetUpdate);
   }
 
   goToStep2() {
@@ -128,8 +125,8 @@ export class ConsultesComponent implements OnInit {
     const fileColono = new FileColono();
     fileColono.fitxersColono = this.formUltimsAnys.formInfoExplor.filesToUpload;
     for (const informeColono of fileColono.fitxersColono) {
-      const uploadSuccessfully = this.uploadService.postFile(fileColono.folderName, informeColono).subscribe((success) => success);
-      if (!uploadSuccessfully) {
+      const responseData = this.uploadService.postFile(fileColono.folderName, informeColono).subscribe((data) => data);
+      if (!responseData) {
         console.log('An error occurred uploading the file');
         break;
       }
