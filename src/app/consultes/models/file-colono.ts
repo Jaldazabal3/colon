@@ -1,10 +1,10 @@
 export class FileColono {
-  folderName: string;
+  private _folderName: string;
   private _fitxersColono: File[] = [];
 
 
   constructor() {
-    this.folderName = this.generateUniqueString();
+    this._folderName = this.generateUniqueString();
   }
 
   private generateUniqueString() {
@@ -18,5 +18,10 @@ export class FileColono {
 
   set fitxersColono(value: File[]) {
     this._fitxersColono = value;
+  }
+
+
+  get folderName(): string {
+    return this._folderName;
   }
 }

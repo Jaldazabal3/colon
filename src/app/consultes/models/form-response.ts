@@ -1,4 +1,4 @@
 export interface FormResponse {
-  responseStatus: string;
+  success: boolean;
   responseMessage: string;
 }

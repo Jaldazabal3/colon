@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  api_url: 'http://localhost:8080/'
+  api_url: 'http://localhost:8080/',
+  form_path: 'consulta',
+  file_path: 'uploadColono'
 };
 
 /*

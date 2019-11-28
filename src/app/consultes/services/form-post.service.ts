@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {FormResponse} from '../models/form-response';
-import {catchError} from 'rxjs/operators';
-import {throwError} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
+import {Observable, throwError} from 'rxjs';
 import { ColonFormData } from '../models/colon-form-data';
 import {ApiService} from './api.service';
+import {environment} from '../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -82,11 +83,10 @@ export class FormPostService {
            formAntecedents,
            formAltresMotius,
            userEmail,
-           userPhone) {
+           userPhone): Observable<FormResponse> {
     // Returning Observable of FormResponse interface
-    // http.post(URL, dataObject, httpOption) --> HttpClient post method
     return this.apiService.post(
-      'consulta',
+      `${environment.form_path}`,
       this.createFormObject(
         formMunicipi,
         formIdentificationData,
@@ -101,8 +101,6 @@ export class FormPostService {
       ),
       httpOptions
     )
-      .subscribe(
-        data => console.log(data)
-      );
+      .pipe(map((data) => data));
   }
 }

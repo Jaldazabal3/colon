@@ -5,9 +5,7 @@ import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 
 const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  })
+
 };
 
 @Injectable({
@@ -21,14 +19,13 @@ export class UploadService {
     return throwError(e);
   }
 
-  postFile(path: string, fileToUpload: File): Observable<any> {
+  postFile(path: string, objectFile: object): Observable<any> {
     const endpoint = `${environment.api_url}${path}`;
     const formData: FormData = new FormData();
-    formData.append('fileKey', fileToUpload, fileToUpload.name);
+    formData.append('fileColono', objectFile.informeColono, objectFile.informeColono.name);
+    formData.append('directoryName', objectFile.customPath);
     return this.http
       .post<any>(endpoint, formData, httpOptions)
       .pipe(catchError(this.handleError));
   }
-
-
 }

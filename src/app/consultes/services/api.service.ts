@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import {catchError} from 'rxjs/operators';
+import {FormResponse} from '../models/form-response';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class ApiService {
       .pipe(catchError(this.formatErrors));
   }
 
-  post(path: string, body: object = {}, options: object = {}): Observable<any> {
-    return this.http.post(
+  post(path: string, body: object = {}, options: object = {}): Observable<FormResponse> {
+    return this.http.post<FormResponse>(
       `${environment.api_url}${path}`,
       JSON.stringify(body),
       options

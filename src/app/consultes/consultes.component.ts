@@ -10,6 +10,8 @@ import {UlcerosaCrohnComponent} from './ulcerosa-crohn/ulcerosa-crohn.component'
 import {MotiuAltresComponent} from './motiu-altres/motiu-altres.component';
 import {FileColono} from './models/file-colono';
 import {UploadService} from './services/upload.service';
+import {environment} from '../../environments/environment';
+import {FormResponse} from './models/form-response';
 
 @Component({
   selector: 'app-consultes',
@@ -121,11 +123,15 @@ export class ConsultesComponent implements OnInit {
   }
 
   private submitData() {
-    // TODO: Upload possible attached files
     const fileColono = new FileColono();
     fileColono.fitxersColono = this.formUltimsAnys.formInfoExplor.filesToUpload;
     for (const informeColono of fileColono.fitxersColono) {
-      const responseData = this.uploadService.postFile(fileColono.folderName, informeColono).subscribe((data) => data);
+      const objectFile = {
+        informeColono,
+        customPath: fileColono.folderName
+      };
+      console.log(fileColono.folderName);
+      const responseData = this.uploadService.postFile(`${environment.file_path}`, objectFile).subscribe((data) => data.success);
       if (!responseData) {
         console.log('An error occurred uploading the file');
         break;
@@ -133,7 +139,8 @@ export class ConsultesComponent implements OnInit {
     }
 
     // Calling form service to send the form data entered by the user to the server.
-    this.sendFormService.sendForm(
+    let formResponse: FormResponse;
+    formResponse = this.sendFormService.sendForm(
       this.formMunicipi,
       this.formIdentificationData,
       this.formMotivo,
